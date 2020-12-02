@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+ <path path="../l8_to_ulong2/*" />
+ <path path="../ulong2_to_l8/*" />
+ <path path="../l8_pkt_buf/*" />
+ <component name="rx_split_by_etype_internal"
+   file="../rx_split/rx_split.prj/components/rx_split_by_etype/rx_split_by_etype_internal_hw.tcl"
+   displayName="rx_split_by_etype_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:rx_split_by_ipv4proto_internal,SIM_VERILOG:rx_split_by_ipv4proto_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+ <component
+   name="rx_split_by_ipv4proto_internal"
+   file="../rx_split/rx_split.prj/components/rx_split_by_ipv4proto/rx_split_by_ipv4proto_internal_hw.tcl"
+   displayName="rx_split_by_ipv4proto_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:rx_split_by_ipv4proto_internal,SIM_VERILOG:rx_split_by_ipv4proto_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+ <component
+   name="rx_split_discard_internal"
+   file="../rx_split/rx_split.prj/components/rx_split_discard/rx_split_discard_internal_hw.tcl"
+   displayName="rx_split_discard_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:rx_split_discard_internal,SIM_VERILOG:rx_split_discard_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+ <component
+   name="arp_proc_internal"
+   file="../arp_proc/arp_proc.prj/components/arp_proc/arp_proc_internal_hw.tcl"
+   displayName="arp_proc_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:arp_proc_internal,SIM_VERILOG:arp_proc_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+ <component
+   name="icmp_proc_ipv4chksum_internal"
+   file="../icmp_proc/icmp_proc.prj/components/icmp_proc_ipv4chksum/icmp_proc_ipv4chksum_internal_hw.tcl"
+   displayName="icmp_proc_ipv4chksum_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:icmp_proc_ipv4chksum_internal,SIM_VERILOG:icmp_proc_ipv4chksum_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+ <component
+   name="icmp_proc_param_internal"
+   file="../icmp_proc/icmp_proc.prj/components/icmp_proc_param/icmp_proc_param_internal_hw.tcl"
+   displayName="icmp_proc_param_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:icmp_proc_param_internal,SIM_VERILOG:icmp_proc_param_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+ <component
+   name="icmp_proc_swapip_internal"
+   file="../icmp_proc/icmp_proc.prj/components/icmp_proc_swapip/icmp_proc_swapip_internal_hw.tcl"
+   displayName="icmp_proc_swapip_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:icmp_proc_swapip_internal,SIM_VERILOG:icmp_proc_swapip_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+ <component
+   name="icmp_proc_swapmac_internal"
+   file="../icmp_proc/icmp_proc.prj/components/icmp_proc_swapmac/icmp_proc_swapmac_internal_hw.tcl"
+   displayName="icmp_proc_swapmac_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:icmp_proc_swapmac_internal,SIM_VERILOG:icmp_proc_swapmac_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+ <component
+   name="tx_merge_internal"
+   file="../tx_merge/tx_merge.prj/components/tx_merge/tx_merge_internal_hw.tcl"
+   displayName="tx_merge_internal"
+   version="1.0"
+   description=""
+   tags="CONNECTION_TYPES=avalon_streaming,clock,reset"
+   categories="HLS"
+   factory="TclModuleFactory">
+  <tag2 key="COMPONENT_EDITABLE" value="true" />
+  <tag2
+     key="FILESETS_TOP_LEVEL_NAMES"
+     value="QUARTUS_SYNTH:tx_merge_internal,SIM_VERILOG:tx_merge_internal" />
+  <tag2 key="INSTANTIATE_IN_SYSTEM_MODULE" value="true" />
+  <tag2 key="SUPPORTED_DEVICE_FAMILIES" value="Cyclone 10 GX" />
+  <tag2 key="SUPPORTED_FILE_SETS" value="QUARTUS_SYNTH,SIM_VERILOG" />
+  <tag2 key="TCL_PACKAGE_VERSION" value="15.0" />
+ </component>
+</library>

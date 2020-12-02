@@ -1,0 +1,320 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 17.1.0 Build 240 10/25/2017 SJ Pro Edition
+# Date created = 17:38:43  November 24, 2017
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone 10 GX"
+set_global_assignment -name DEVICE 10CX220YF780E5G
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:38:43  NOVEMBER 24, 2017"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Pro Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name POWER_AUTO_COMPUTE_TJ ON
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE debug.stp
+
+## common signals
+set_location_assignment PIN_AC12 -to fpga_resetn
+set_location_assignment PIN_J23 -to c10_clk50m
+#set_location_assignment PIN_Y15 -to c10_clkusr
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_resetn
+set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_clk50m
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to c10_clkusr
+
+## PCIe gen2 x4 Hard IP
+set_location_assignment PIN_V26  -to hip_serial_rx_in0
+set_location_assignment PIN_V25  -to "hip_serial_rx_in0(n)"
+set_location_assignment PIN_T26  -to hip_serial_rx_in1
+set_location_assignment PIN_T25  -to "hip_serial_rx_in1(n)"
+set_location_assignment PIN_P26  -to hip_serial_rx_in2
+set_location_assignment PIN_P25  -to "hip_serial_rx_in2(n)"
+set_location_assignment PIN_M26  -to hip_serial_rx_in3
+set_location_assignment PIN_M25  -to "hip_serial_rx_in3(n)"
+set_location_assignment PIN_W28  -to hip_serial_tx_out0
+set_location_assignment PIN_U28  -to hip_serial_tx_out1
+set_location_assignment PIN_R28  -to hip_serial_tx_out2
+set_location_assignment PIN_N28  -to hip_serial_tx_out3
+set_location_assignment PIN_R24  -to refclk_clk
+set_location_assignment PIN_R23  -to "refclk_clk(n)"
+set_location_assignment PIN_AB11 -to perstn
+
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to "hip_serial_rx_in0(n)" -entity top
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in1 -entity top
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in2 -entity top
+set_instance_assignment -name IO_STANDARD "CURRENT MODE LOGIC (CML)" -to hip_serial_rx_in3 -entity top
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out0 -entity top
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out1 -entity top
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out2 -entity top
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to hip_serial_tx_out3 -entity top
+set_instance_assignment -name IO_STANDARD "1.8 V" -to perstn -entity top
+set_instance_assignment -name IO_STANDARD "1.8 V" -to "perstn(n)" -entity top
+set_instance_assignment -name IO_STANDARD HCSL -to refclk_clk -entity top
+
+## GPIO
+set_location_assignment PIN_AC1 -to user_dip[3]
+set_location_assignment PIN_AC2 -to user_dip[2]
+set_location_assignment PIN_AD2 -to user_dip[1]
+set_location_assignment PIN_AE2 -to user_dip[0]
+set_location_assignment PIN_AH2 -to user_pb[2]
+set_location_assignment PIN_AD4 -to user_pb[1]
+set_location_assignment PIN_AE4 -to user_pb[0]
+set_location_assignment PIN_AC7 -to user_led[3]
+set_location_assignment PIN_AC6 -to user_led[2]
+set_location_assignment PIN_AE6 -to user_led[1]
+set_location_assignment PIN_AF6 -to user_led[0]
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_dip[3]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_dip[2]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_dip[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_dip[0]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_pb[2]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_pb[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_pb[0]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_led[3]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_led[2]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_led[1]
+set_instance_assignment -name IO_STANDARD "1.8 V" -to user_led[0]
+
+## DDR4 SDRAM
+set_location_assignment PIN_Y17  -to emif_0_mem_a[14]
+set_location_assignment PIN_AA17 -to emif_0_mem_a[13]
+set_location_assignment PIN_Y19  -to emif_0_mem_a[12]
+set_location_assignment PIN_AB20 -to emif_0_mem_a[11]
+set_location_assignment PIN_AC20 -to emif_0_mem_a[10]
+set_location_assignment PIN_AH20 -to emif_0_mem_a[9]
+set_location_assignment PIN_AH21 -to emif_0_mem_a[8]
+set_location_assignment PIN_AB21 -to emif_0_mem_a[7]
+set_location_assignment PIN_AC21 -to emif_0_mem_a[6]
+set_location_assignment PIN_AE21 -to emif_0_mem_a[5]
+set_location_assignment PIN_AF21 -to emif_0_mem_a[4]
+set_location_assignment PIN_AG21 -to emif_0_mem_a[3]
+set_location_assignment PIN_AH22 -to emif_0_mem_a[2]
+set_location_assignment PIN_AG20 -to emif_0_mem_a[1]
+set_location_assignment PIN_AG19 -to emif_0_mem_a[0]
+set_location_assignment PIN_Y21  -to emif_0_mem_ba[2]
+set_location_assignment PIN_AA21 -to emif_0_mem_ba[1]
+set_location_assignment PIN_W21  -to emif_0_mem_ba[0]
+set_location_assignment PIN_AA23 -to emif_0_mem_cke[0]
+set_location_assignment PIN_AE23 -to emif_0_mem_ck[0]
+set_location_assignment PIN_AD23 -to emif_0_mem_ck_n[0]
+set_location_assignment PIN_W20  -to emif_0_mem_cas_n[0]
+set_location_assignment PIN_AF22 -to emif_0_mem_cs_n[0]
+set_location_assignment PIN_AG11 -to emif_0_mem_dq[39]
+set_location_assignment PIN_AH18 -to emif_0_mem_dq[38]
+set_location_assignment PIN_AG10 -to emif_0_mem_dq[37]
+set_location_assignment PIN_AH12 -to emif_0_mem_dq[36]
+set_location_assignment PIN_AG13 -to emif_0_mem_dq[35]
+set_location_assignment PIN_AH17 -to emif_0_mem_dq[34]
+set_location_assignment PIN_AH13 -to emif_0_mem_dq[33]
+set_location_assignment PIN_AH15 -to emif_0_mem_dq[32]
+set_location_assignment PIN_E15  -to emif_0_mem_dq[31]
+set_location_assignment PIN_A17  -to emif_0_mem_dq[30]
+set_location_assignment PIN_C20  -to emif_0_mem_dq[29]
+set_location_assignment PIN_A18  -to emif_0_mem_dq[28]
+set_location_assignment PIN_B20  -to emif_0_mem_dq[27]
+set_location_assignment PIN_C15  -to emif_0_mem_dq[26]
+set_location_assignment PIN_A19  -to emif_0_mem_dq[25]
+set_location_assignment PIN_D15  -to emif_0_mem_dq[24]
+set_location_assignment PIN_A21  -to emif_0_mem_dq[23]
+set_location_assignment PIN_A24  -to emif_0_mem_dq[22]
+set_location_assignment PIN_C21  -to emif_0_mem_dq[21]
+set_location_assignment PIN_B21  -to emif_0_mem_dq[20]
+set_location_assignment PIN_A22  -to emif_0_mem_dq[19]
+set_location_assignment PIN_B25  -to emif_0_mem_dq[18]
+set_location_assignment PIN_B23  -to emif_0_mem_dq[17]
+set_location_assignment PIN_B26  -to emif_0_mem_dq[16]
+set_location_assignment PIN_C13  -to emif_0_mem_dq[15]
+set_location_assignment PIN_A12  -to emif_0_mem_dq[14]
+set_location_assignment PIN_D14  -to emif_0_mem_dq[13]
+set_location_assignment PIN_A13  -to emif_0_mem_dq[12]
+set_location_assignment PIN_D13  -to emif_0_mem_dq[11]
+set_location_assignment PIN_B11  -to emif_0_mem_dq[10]
+set_location_assignment PIN_B15  -to emif_0_mem_dq[9]
+set_location_assignment PIN_A11  -to emif_0_mem_dq[8]
+set_location_assignment PIN_C8   -to emif_0_mem_dq[7]
+set_location_assignment PIN_C11  -to emif_0_mem_dq[6]
+set_location_assignment PIN_D9   -to emif_0_mem_dq[5]
+set_location_assignment PIN_D8   -to emif_0_mem_dq[4]
+set_location_assignment PIN_B9   -to emif_0_mem_dq[3]
+set_location_assignment PIN_D10  -to emif_0_mem_dq[2]
+set_location_assignment PIN_B10  -to emif_0_mem_dq[1]
+set_location_assignment PIN_C10  -to emif_0_mem_dq[0]
+set_location_assignment PIN_AH11 -to emif_0_mem_dqs[4]
+set_location_assignment PIN_AH10 -to emif_0_mem_dqs_n[4]
+set_location_assignment PIN_B19  -to emif_0_mem_dqs[3]
+set_location_assignment PIN_B18  -to emif_0_mem_dqs_n[3]
+set_location_assignment PIN_A27  -to emif_0_mem_dqs[2]
+set_location_assignment PIN_A26  -to emif_0_mem_dqs_n[2]
+set_location_assignment PIN_A14  -to emif_0_mem_dqs[1]
+set_location_assignment PIN_B13  -to emif_0_mem_dqs_n[1]
+set_location_assignment PIN_A9   -to emif_0_mem_dqs[0]
+set_location_assignment PIN_A8   -to emif_0_mem_dqs_n[0]
+set_location_assignment PIN_AH16 -to emif_0_mem_dm[4]
+set_location_assignment PIN_B16  -to emif_0_mem_dm[3]
+set_location_assignment PIN_B24  -to emif_0_mem_dm[2]
+set_location_assignment PIN_B14  -to emif_0_mem_dm[1]
+set_location_assignment PIN_C12  -to emif_0_mem_dm[0]
+set_location_assignment PIN_AB19 -to emif_0_mem_ras_n[0]
+set_location_assignment PIN_AD22 -to emif_0_mem_we_n[0]
+set_location_assignment PIN_AC23 -to emif_0_mem_odt[0]
+set_location_assignment PIN_Y20  -to emif_0_oct_rzqin
+set_location_assignment PIN_AA18 -to emif_0_pll_ref_clk
+set_location_assignment PIN_AA19 -to "emif_0_pll_ref_clk(n)"
+set_location_assignment PIN_AC22 -to emif_0_mem_reset_n[0]
+
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to emif_0_mem_cas_n[0] -entity top
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to emif_0_mem_dm[4] -entity top
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to emif_0_mem_dm[3] -entity top
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to emif_0_mem_dm[2] -entity top
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to emif_0_mem_dm[1] -entity top
+set_instance_assignment -name IO_STANDARD "SSTL-15" -to emif_0_mem_dm[0] -entity top
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to emif_0_mem_ras_n[0] -entity top
+set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to emif_0_mem_we_n[0] -entity top
+
+## SFP plus port x2
+set_location_assignment PIN_N24  -to sfp_refclk
+set_location_assignment PIN_N23  -to "sfp_refclk(n)"
+set_location_assignment PIN_F26  -to sfp_rx_0
+set_location_assignment PIN_F25  -to "sfp_rx_0(n)"
+set_location_assignment PIN_G28  -to sfp_tx_0
+set_location_assignment PIN_G27  -to "sfp_tx_0(n)"
+#set_location_assignment PIN_H26  -to sfp_rx_1
+#set_location_assignment PIN_H25  -to "sfp_rx_1(n)"
+#set_location_assignment PIN_J28  -to sfp_tx_1
+#set_location_assignment PIN_J27  -to "sfp_tx_1(n)"
+set_location_assignment PIN_E21  -to sfp_scl_0
+set_location_assignment PIN_D22  -to sfp_sda_0
+#set_location_assignment PIN_E23  -to sfp_int_0
+#set_location_assignment PIN_H21  -to sfp_scl_1
+#set_location_assignment PIN_H20  -to sfp_sda_1
+#set_location_assignment PIN_D23  -to sfp_int_1
+
+set_instance_assignment -name IO_STANDARD LVDS -to sfp_refclk
+set_instance_assignment -name XCVR_REFCLK_PIN_TERMINATION AC_COUPLING -to sfp_refclk
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to sfp_rx_0
+set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to sfp_tx_0
+#set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to sfp_rx_1
+#set_instance_assignment -name IO_STANDARD "HSSI DIFFERENTIAL I/O" -to sfp_tx_1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_scl_0
+set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_sda_0
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_int_0
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_scl_1
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_sda_1
+#set_instance_assignment -name IO_STANDARD "1.8 V" -to sfp_int_1
+
+set_instance_assignment -name XCVR_C10_RX_TERM_SEL R_R1 -to sfp_rx_0
+set_instance_assignment -name XCVR_C10_RX_ONE_STAGE_ENABLE NON_S1_MODE -to sfp_rx_0
+set_instance_assignment -name XCVR_C10_RX_EQ_DC_GAIN_TRIM NO_DC_GAIN -to sfp_rx_0
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to sfp_rx_0
+set_instance_assignment -name XCVR_C10_RX_ADP_VGA_SEL RADP_VGA_SEL_2 -to sfp_rx_0
+set_instance_assignment -name XCVR_C10_RX_ADP_CTLE_ACGAIN_4S RADP_CTLE_ACGAIN_4S_6 -to sfp_rx_0
+
+#set_instance_assignment -name XCVR_C10_RX_TERM_SEL R_R1 -to sfp_rx_1
+#set_instance_assignment -name XCVR_C10_RX_ONE_STAGE_ENABLE NON_S1_MODE -to sfp_rx_1
+#set_instance_assignment -name XCVR_C10_RX_EQ_DC_GAIN_TRIM NO_DC_GAIN -to sfp_rx_1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to sfp_rx_1
+#set_instance_assignment -name XCVR_C10_RX_ADP_VGA_SEL RADP_VGA_SEL_2 -to sfp_rx_1
+#set_instance_assignment -name XCVR_C10_RX_ADP_CTLE_ACGAIN_4S RADP_CTLE_ACGAIN_4S_6 -to sfp_rx_1
+
+set_instance_assignment -name XCVR_C10_TX_VOD_OUTPUT_SWING_CTRL 31 -to sfp_tx_0
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_COMPENSATION_EN ENABLE -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_1ST_POST_TAP 3 -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_1ST_POST_TAP FIR_POST_1T_NEG -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_1T 3 -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_1T FIR_PRE_1T_NEG -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_2ND_POST_TAP 3 -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_2ND_POST_TAP FIR_POST_2T_POS -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_2T 0 -to sfp_tx_0
+set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_2T FIR_PRE_2T_POS -to sfp_tx_0
+
+#set_instance_assignment -name XCVR_C10_TX_VOD_OUTPUT_SWING_CTRL 31 -to sfp_tx_1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_0V -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_COMPENSATION_EN ENABLE -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_1ST_POST_TAP 3 -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_1ST_POST_TAP FIR_POST_1T_NEG -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_1T 3 -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_1T FIR_PRE_1T_NEG -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_2ND_POST_TAP 3 -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_2ND_POST_TAP FIR_POST_2T_POS -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SWITCHING_CTRL_PRE_TAP_2T 0 -to sfp_tx_1
+#set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_2T FIR_PRE_2T_POS -to sfp_tx_1
+
+## files
+
+set_global_assignment -name FLOW_ENABLE_INTERACTIVE_TIMING_ANALYZER OFF
+set_global_assignment -name SDC_FILE top.sdc
+set_global_assignment -name VERILOG_FILE ../src/top/top.v
+set_global_assignment -name VERILOG_FILE ../src/common/fifo_80x8.v
+set_global_assignment -name QSYS_FILE ../src/system/system.qsys
+set_global_assignment -name IP_FILE ../src/system/ip/system_onchip_memory.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_pcie_dclk_snoop.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_global_clk.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_global_rst.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_emif.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_pcie_hip.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_atxpll.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_iopll.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_refclk.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_reset_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_nios_mem.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_nios_proc.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_nios_i2c.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_nios_jtaguart.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_10gmac_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_10gphy_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_xgmii_clk_snoop.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_rx_split_by_etype_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_rx_split_by_ipv4proto_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_rx_split_ipv4proto_dsc_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_rx_split_etype_dsc_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_l8_to_ulong2_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_l8_pkt_buf_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_ulong2_to_l8_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_tx_merge_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_icmp_proc_swapmac_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_icmp_proc_swapip_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_icmp_proc_param_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_icmp_proc_ipv4chksum_p0.ip
+set_global_assignment -name IP_FILE ../src/system/ip/system_enet_arp_proc_p0.ip
+set_global_assignment -name QIP_FILE ../src/enet_nios_proc/enet_nios_proc/mem_init/meminit.qip
+set_global_assignment -name SIGNALTAP_FILE debug.stp

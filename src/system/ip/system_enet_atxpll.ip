@@ -1,0 +1,2070 @@
+<?xml version="1.0" ?>
+<ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
+  <ipxact:vendor>Intel Corporation</ipxact:vendor>
+  <ipxact:library>system_enet_atxpll</ipxact:library>
+  <ipxact:name>system_xcvr_atx_pll_c10</ipxact:name>
+  <ipxact:version>19.1</ipxact:version>
+  <ipxact:busInterfaces>
+    <ipxact:busInterface>
+      <ipxact:name>pll_powerdown</ipxact:name>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.1"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.1"></ipxact:abstractionRef>
+          <ipxact:portMaps>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>pll_powerdown</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>pll_powerdown</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+          </ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:slave></ipxact:slave>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="associatedClock" type="string">
+          <ipxact:name>associatedClock</ipxact:name>
+          <ipxact:displayName>associatedClock</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="associatedReset" type="string">
+          <ipxact:name>associatedReset</ipxact:name>
+          <ipxact:displayName>associatedReset</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="prSafe" type="bit">
+          <ipxact:name>prSafe</ipxact:name>
+          <ipxact:displayName>Partial Reconfiguration Safe</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+      <ipxact:vendorExtensions>
+        <altera:altera_assignments>
+          <ipxact:parameters>
+            <ipxact:parameter parameterId="ui.blockdiagram.direction" type="string">
+              <ipxact:name>ui.blockdiagram.direction</ipxact:name>
+              <ipxact:value>input</ipxact:value>
+            </ipxact:parameter>
+          </ipxact:parameters>
+        </altera:altera_assignments>
+      </ipxact:vendorExtensions>
+    </ipxact:busInterface>
+    <ipxact:busInterface>
+      <ipxact:name>pll_refclk0</ipxact:name>
+      <ipxact:busType vendor="altera" library="altera" name="clock" version="20.1"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="clock" version="20.1"></ipxact:abstractionRef>
+          <ipxact:portMaps>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>clk</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>pll_refclk0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+          </ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:slave></ipxact:slave>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="clockRate" type="longint">
+          <ipxact:name>clockRate</ipxact:name>
+          <ipxact:displayName>Clock rate</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="externallyDriven" type="bit">
+          <ipxact:name>externallyDriven</ipxact:name>
+          <ipxact:displayName>Externally driven</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="ptfSchematicName" type="string">
+          <ipxact:name>ptfSchematicName</ipxact:name>
+          <ipxact:displayName>PTF schematic name</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+      <ipxact:vendorExtensions>
+        <altera:altera_assignments>
+          <ipxact:parameters>
+            <ipxact:parameter parameterId="ui.blockdiagram.direction" type="string">
+              <ipxact:name>ui.blockdiagram.direction</ipxact:name>
+              <ipxact:value>input</ipxact:value>
+            </ipxact:parameter>
+          </ipxact:parameters>
+        </altera:altera_assignments>
+      </ipxact:vendorExtensions>
+    </ipxact:busInterface>
+    <ipxact:busInterface>
+      <ipxact:name>tx_serial_clk</ipxact:name>
+      <ipxact:busType vendor="altera" library="altera" name="hssi_serial_clock" version="20.1"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="hssi_serial_clock" version="20.1"></ipxact:abstractionRef>
+          <ipxact:portMaps>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>clk</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>tx_serial_clk</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+          </ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:master></ipxact:master>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="clockRate" type="longint">
+          <ipxact:name>clockRate</ipxact:name>
+          <ipxact:displayName>Clock rate</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+      <ipxact:vendorExtensions>
+        <altera:altera_assignments>
+          <ipxact:parameters>
+            <ipxact:parameter parameterId="ui.blockdiagram.direction" type="string">
+              <ipxact:name>ui.blockdiagram.direction</ipxact:name>
+              <ipxact:value>output</ipxact:value>
+            </ipxact:parameter>
+          </ipxact:parameters>
+        </altera:altera_assignments>
+      </ipxact:vendorExtensions>
+    </ipxact:busInterface>
+    <ipxact:busInterface>
+      <ipxact:name>pll_locked</ipxact:name>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.1"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.1"></ipxact:abstractionRef>
+          <ipxact:portMaps>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>pll_locked</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>pll_locked</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+          </ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:slave></ipxact:slave>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="associatedClock" type="string">
+          <ipxact:name>associatedClock</ipxact:name>
+          <ipxact:displayName>associatedClock</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="associatedReset" type="string">
+          <ipxact:name>associatedReset</ipxact:name>
+          <ipxact:displayName>associatedReset</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="prSafe" type="bit">
+          <ipxact:name>prSafe</ipxact:name>
+          <ipxact:displayName>Partial Reconfiguration Safe</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+      <ipxact:vendorExtensions>
+        <altera:altera_assignments>
+          <ipxact:parameters>
+            <ipxact:parameter parameterId="ui.blockdiagram.direction" type="string">
+              <ipxact:name>ui.blockdiagram.direction</ipxact:name>
+              <ipxact:value>output</ipxact:value>
+            </ipxact:parameter>
+          </ipxact:parameters>
+        </altera:altera_assignments>
+      </ipxact:vendorExtensions>
+    </ipxact:busInterface>
+    <ipxact:busInterface>
+      <ipxact:name>pll_cal_busy</ipxact:name>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="20.1"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="20.1"></ipxact:abstractionRef>
+          <ipxact:portMaps>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>pll_cal_busy</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>pll_cal_busy</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+          </ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:slave></ipxact:slave>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="associatedClock" type="string">
+          <ipxact:name>associatedClock</ipxact:name>
+          <ipxact:displayName>associatedClock</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="associatedReset" type="string">
+          <ipxact:name>associatedReset</ipxact:name>
+          <ipxact:displayName>associatedReset</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="prSafe" type="bit">
+          <ipxact:name>prSafe</ipxact:name>
+          <ipxact:displayName>Partial Reconfiguration Safe</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+      <ipxact:vendorExtensions>
+        <altera:altera_assignments>
+          <ipxact:parameters>
+            <ipxact:parameter parameterId="ui.blockdiagram.direction" type="string">
+              <ipxact:name>ui.blockdiagram.direction</ipxact:name>
+              <ipxact:value>output</ipxact:value>
+            </ipxact:parameter>
+          </ipxact:parameters>
+        </altera:altera_assignments>
+      </ipxact:vendorExtensions>
+    </ipxact:busInterface>
+  </ipxact:busInterfaces>
+  <ipxact:model>
+    <ipxact:views>
+      <ipxact:view>
+        <ipxact:name>QUARTUS_SYNTH</ipxact:name>
+        <ipxact:envIdentifier>:quartus.altera.com:</ipxact:envIdentifier>
+        <ipxact:componentInstantiationRef>QUARTUS_SYNTH</ipxact:componentInstantiationRef>
+      </ipxact:view>
+    </ipxact:views>
+    <ipxact:instantiations>
+      <ipxact:componentInstantiation>
+        <ipxact:name>QUARTUS_SYNTH</ipxact:name>
+        <ipxact:moduleName>altera_xcvr_atx_pll_a10</ipxact:moduleName>
+        <ipxact:fileSetRef>
+          <ipxact:localName>QUARTUS_SYNTH</ipxact:localName>
+        </ipxact:fileSetRef>
+        <ipxact:parameters></ipxact:parameters>
+      </ipxact:componentInstantiation>
+    </ipxact:instantiations>
+    <ipxact:ports>
+      <ipxact:port>
+        <ipxact:name>pll_powerdown</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>pll_refclk0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>tx_serial_clk</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>pll_locked</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>pll_cal_busy</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors></ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+    </ipxact:ports>
+  </ipxact:model>
+  <ipxact:vendorExtensions>
+    <altera:entity_info>
+      <ipxact:vendor>Intel Corporation</ipxact:vendor>
+      <ipxact:library>system_enet_atxpll</ipxact:library>
+      <ipxact:name>altera_xcvr_atx_pll_a10</ipxact:name>
+      <ipxact:version>19.1</ipxact:version>
+    </altera:entity_info>
+    <altera:altera_module_parameters>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="rcfg_debug" type="int">
+          <ipxact:name>rcfg_debug</ipxact:name>
+          <ipxact:displayName>rcfg_debug</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_pll_reconfig" type="int">
+          <ipxact:name>enable_pll_reconfig</ipxact:name>
+          <ipxact:displayName>Enable dynamic reconfiguration</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_advanced_avmm_options" type="int">
+          <ipxact:name>enable_advanced_avmm_options</ipxact:name>
+          <ipxact:displayName>enable_advanced_avmm_options</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_jtag_enable" type="int">
+          <ipxact:name>rcfg_jtag_enable</ipxact:name>
+          <ipxact:displayName>Enable Native PHY Debug Master Endpoint</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_separate_avmm_busy" type="int">
+          <ipxact:name>rcfg_separate_avmm_busy</ipxact:name>
+          <ipxact:displayName>Separate reconfig_waitrequest from the status of AVMM arbitration with PreSICE</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_enable_avmm_busy_port" type="int">
+          <ipxact:name>rcfg_enable_avmm_busy_port</ipxact:name>
+          <ipxact:displayName>Enable avmm_busy port</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_capability_reg_enable" type="int">
+          <ipxact:name>set_capability_reg_enable</ipxact:name>
+          <ipxact:displayName>Enable capability registers</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_user_identifier" type="int">
+          <ipxact:name>set_user_identifier</ipxact:name>
+          <ipxact:displayName>Set user-defined IP identifier</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_csr_soft_logic_enable" type="int">
+          <ipxact:name>set_csr_soft_logic_enable</ipxact:name>
+          <ipxact:displayName>Enable control and status registers</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="dbg_embedded_debug_enable" type="int">
+          <ipxact:name>dbg_embedded_debug_enable</ipxact:name>
+          <ipxact:displayName>dbg_embedded_debug_enable</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="dbg_capability_reg_enable" type="int">
+          <ipxact:name>dbg_capability_reg_enable</ipxact:name>
+          <ipxact:displayName>dbg_capability_reg_enable</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="dbg_user_identifier" type="int">
+          <ipxact:name>dbg_user_identifier</ipxact:name>
+          <ipxact:displayName>dbg_user_identifier</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="dbg_stat_soft_logic_enable" type="int">
+          <ipxact:name>dbg_stat_soft_logic_enable</ipxact:name>
+          <ipxact:displayName>dbg_stat_soft_logic_enable</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="dbg_ctrl_soft_logic_enable" type="int">
+          <ipxact:name>dbg_ctrl_soft_logic_enable</ipxact:name>
+          <ipxact:displayName>dbg_ctrl_soft_logic_enable</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_file_prefix" type="string">
+          <ipxact:name>rcfg_file_prefix</ipxact:name>
+          <ipxact:displayName>Configuration file prefix</ipxact:displayName>
+          <ipxact:value>altera_xcvr_atx_pll_a10</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_sv_file_enable" type="int">
+          <ipxact:name>rcfg_sv_file_enable</ipxact:name>
+          <ipxact:displayName>Generate SystemVerilog package file</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_h_file_enable" type="int">
+          <ipxact:name>rcfg_h_file_enable</ipxact:name>
+          <ipxact:displayName>Generate C header file</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_txt_file_enable" type="int">
+          <ipxact:name>rcfg_txt_file_enable</ipxact:name>
+          <ipxact:displayName>Generate text file</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_mif_file_enable" type="int">
+          <ipxact:name>rcfg_mif_file_enable</ipxact:name>
+          <ipxact:displayName>Generate MIF (Memory Initialize File)</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_multi_enable" type="int">
+          <ipxact:name>rcfg_multi_enable</ipxact:name>
+          <ipxact:displayName>Enable multiple reconfiguration profiles</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_rcfg_emb_strm_enable" type="int">
+          <ipxact:name>set_rcfg_emb_strm_enable</ipxact:name>
+          <ipxact:displayName>Enable embedded reconfiguration streamer</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_emb_strm_enable" type="int">
+          <ipxact:name>rcfg_emb_strm_enable</ipxact:name>
+          <ipxact:displayName>rcfg_emb_strm_enable</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_reduced_files_enable" type="int">
+          <ipxact:name>rcfg_reduced_files_enable</ipxact:name>
+          <ipxact:displayName>Generate reduced reconfiguration files</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_cnt" type="int">
+          <ipxact:name>rcfg_profile_cnt</ipxact:name>
+          <ipxact:displayName>Number of reconfiguration profiles</ipxact:displayName>
+          <ipxact:value>2</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_select" type="int">
+          <ipxact:name>rcfg_profile_select</ipxact:name>
+          <ipxact:displayName>Store current configuration to profile:</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_data0" type="string">
+          <ipxact:name>rcfg_profile_data0</ipxact:name>
+          <ipxact:displayName>rcfg_profile_data0</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_data1" type="string">
+          <ipxact:name>rcfg_profile_data1</ipxact:name>
+          <ipxact:displayName>rcfg_profile_data1</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_data2" type="string">
+          <ipxact:name>rcfg_profile_data2</ipxact:name>
+          <ipxact:displayName>rcfg_profile_data2</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_data3" type="string">
+          <ipxact:name>rcfg_profile_data3</ipxact:name>
+          <ipxact:displayName>rcfg_profile_data3</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_data4" type="string">
+          <ipxact:name>rcfg_profile_data4</ipxact:name>
+          <ipxact:displayName>rcfg_profile_data4</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_data5" type="string">
+          <ipxact:name>rcfg_profile_data5</ipxact:name>
+          <ipxact:displayName>rcfg_profile_data5</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_data6" type="string">
+          <ipxact:name>rcfg_profile_data6</ipxact:name>
+          <ipxact:displayName>rcfg_profile_data6</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_profile_data7" type="string">
+          <ipxact:name>rcfg_profile_data7</ipxact:name>
+          <ipxact:displayName>rcfg_profile_data7</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_params" type="string">
+          <ipxact:name>rcfg_params</ipxact:name>
+          <ipxact:displayName>rcfg_params</ipxact:displayName>
+          <ipxact:value>rcfg_debug,enable_pll_reconfig,rcfg_jtag_enable,rcfg_separate_avmm_busy,rcfg_enable_avmm_busy_port,set_capability_reg_enable,set_user_identifier,set_csr_soft_logic_enable,enable_pld_atx_cal_busy_port,support_mode,prot_mode,bw_sel,refclk_cnt,refclk_index,primary_pll_buffer,enable_8G_path,enable_16G_path,enable_pcie_clk,enable_cascade_out,enable_hip_cal_done_port,set_hip_cal_en,set_output_clock_frequency,set_auto_reference_clock_frequency,set_manual_reference_clock_frequency,set_fref_clock_frequency,set_m_counter,set_ref_clk_div,set_l_counter,set_l_cascade_counter,set_l_cascade_predivider,set_k_counter,enable_mcgb,mcgb_div,enable_hfreq_clk,enable_mcgb_pcie_clksw,mcgb_aux_clkin_cnt,enable_bonding_clks,enable_fb_comp_bonding,pma_width,enable_pld_mcgb_cal_busy_port</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_labels" type="string">
+          <ipxact:name>rcfg_param_labels</ipxact:name>
+          <ipxact:displayName>IP Parameters</ipxact:displayName>
+          <ipxact:value>rcfg_debug,Enable dynamic reconfiguration,Enable Native PHY Debug Master Endpoint,Separate reconfig_waitrequest from the status of AVMM arbitration with PreSICE,Enable avmm_busy port,Enable capability registers,Set user-defined IP identifier,Enable control and status registers,enable_pld_atx_cal_busy_port,Support mode,Protocol mode,Bandwidth,Number of PLL reference clocks,Selected reference clock source,Primary PLL clock output buffer,Enable PLL GX clock output port,Enable PLL GT clock output port,Enable PCIe clock output port,Enable cascade clock output port,Enable calibration status ports for HIP,Enable PCIe hard IP calibration,PLL output frequency,PLL integer reference clock frequency,PLL fractional reference clock frequency,PLL fractional reference clock frequency,Multiply factor (M-Counter),Divide factor (N-Counter),Divide factor (L-Counter),Divide factor (L-Cascade Counter),predivide factor (L-Cascade Predivider),Fractional multiply factor (K),Include Master Clock Generation Block,Clock division factor,Enable x6/xN non-bonded high-speed clock output port,Enable PCIe clock switch interface,Number of auxiliary MCGB clock input ports.,Enable bonding clock output ports,Enable feedback compensation bonding,PMA interface width,enable_pld_mcgb_cal_busy_port</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_vals0" type="string">
+          <ipxact:name>rcfg_param_vals0</ipxact:name>
+          <ipxact:displayName>Profile 0</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_vals1" type="string">
+          <ipxact:name>rcfg_param_vals1</ipxact:name>
+          <ipxact:displayName>Profile 1</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_vals2" type="string">
+          <ipxact:name>rcfg_param_vals2</ipxact:name>
+          <ipxact:displayName>Profile 2</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_vals3" type="string">
+          <ipxact:name>rcfg_param_vals3</ipxact:name>
+          <ipxact:displayName>Profile 3</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_vals4" type="string">
+          <ipxact:name>rcfg_param_vals4</ipxact:name>
+          <ipxact:displayName>Profile 4</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_vals5" type="string">
+          <ipxact:name>rcfg_param_vals5</ipxact:name>
+          <ipxact:displayName>Profile 5</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_vals6" type="string">
+          <ipxact:name>rcfg_param_vals6</ipxact:name>
+          <ipxact:displayName>Profile 6</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="rcfg_param_vals7" type="string">
+          <ipxact:name>rcfg_param_vals7</ipxact:name>
+          <ipxact:displayName>Profile 7</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_powerdown_mode" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_powerdown_mode</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_powerdown_mode</ipxact:displayName>
+          <ipxact:value>powerup</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch0_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch0_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch0_src</ipxact:displayName>
+          <ipxact:value>scratch0_src_lvpecl</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch1_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch1_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch1_src</ipxact:displayName>
+          <ipxact:value>scratch1_src_lvpecl</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch2_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch2_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch2_src</ipxact:displayName>
+          <ipxact:value>scratch2_src_lvpecl</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch3_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch3_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch3_src</ipxact:displayName>
+          <ipxact:value>scratch3_src_lvpecl</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xmux_lc_scratch4_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch4_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xmux_lc_scratch4_src</ipxact:displayName>
+          <ipxact:value>scratch4_src_lvpecl</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xmux_refclk_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xmux_refclk_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xmux_refclk_src</ipxact:displayName>
+          <ipxact:value>src_lvpecl</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_iqclk_sel" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_iqclk_sel</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_iqclk_sel</ipxact:displayName>
+          <ipxact:value>power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch0_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch0_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch0_src</ipxact:displayName>
+          <ipxact:value>scratch0_power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch1_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch1_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch1_src</ipxact:displayName>
+          <ipxact:value>scratch1_power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch2_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch2_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch2_src</ipxact:displayName>
+          <ipxact:value>scratch2_power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch3_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch3_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch3_src</ipxact:displayName>
+          <ipxact:value>scratch3_power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch4_src" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch4_src</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_scratch4_src</ipxact:displayName>
+          <ipxact:value>scratch4_power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_refclk_select" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_refclk_select</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_refclk_select</ipxact:displayName>
+          <ipxact:value>ref_iqclk0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_silicon_rev" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_silicon_rev</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_silicon_rev</ipxact:displayName>
+          <ipxact:value>20nm1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_inclk0_logical_to_physical_mapping" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_inclk0_logical_to_physical_mapping</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_inclk0_logical_to_physical_mapping</ipxact:displayName>
+          <ipxact:value>ref_iqclk0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_inclk1_logical_to_physical_mapping" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_inclk1_logical_to_physical_mapping</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_inclk1_logical_to_physical_mapping</ipxact:displayName>
+          <ipxact:value>power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_inclk2_logical_to_physical_mapping" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_inclk2_logical_to_physical_mapping</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_inclk2_logical_to_physical_mapping</ipxact:displayName>
+          <ipxact:value>power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_inclk3_logical_to_physical_mapping" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_inclk3_logical_to_physical_mapping</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_inclk3_logical_to_physical_mapping</ipxact:displayName>
+          <ipxact:value>power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_lc_refclk_select_mux_inclk4_logical_to_physical_mapping" type="string">
+          <ipxact:name>hssi_pma_lc_refclk_select_mux_inclk4_logical_to_physical_mapping</ipxact:name>
+          <ipxact:displayName>hssi_pma_lc_refclk_select_mux_inclk4_logical_to_physical_mapping</ipxact:displayName>
+          <ipxact:value>power_down</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_silicon_rev" type="string">
+          <ipxact:name>hssi_refclk_divider_silicon_rev</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_silicon_rev</ipxact:displayName>
+          <ipxact:value>20nm1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_clk_divider" type="string">
+          <ipxact:name>hssi_refclk_divider_clk_divider</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_clk_divider</ipxact:displayName>
+          <ipxact:value>div2_off</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_core_clk_lvpecl" type="string">
+          <ipxact:name>hssi_refclk_divider_core_clk_lvpecl</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_core_clk_lvpecl</ipxact:displayName>
+          <ipxact:value>core_clk_lvpecl_off</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_enable_lvpecl" type="string">
+          <ipxact:name>hssi_refclk_divider_enable_lvpecl</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_enable_lvpecl</ipxact:displayName>
+          <ipxact:value>lvpecl_enable</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_optimal" type="string">
+          <ipxact:name>hssi_refclk_divider_optimal</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_optimal</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_powerdown_mode" type="string">
+          <ipxact:name>hssi_refclk_divider_powerdown_mode</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_powerdown_mode</ipxact:displayName>
+          <ipxact:value>powerup</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_sel_pldclk" type="string">
+          <ipxact:name>hssi_refclk_divider_sel_pldclk</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_sel_pldclk</ipxact:displayName>
+          <ipxact:value>iqclk_sel_lvpecl</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_sup_mode" type="string">
+          <ipxact:name>hssi_refclk_divider_sup_mode</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_sup_mode</ipxact:displayName>
+          <ipxact:value>user_mode</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_term_tristate" type="string">
+          <ipxact:name>hssi_refclk_divider_term_tristate</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_term_tristate</ipxact:displayName>
+          <ipxact:value>tristate_off</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_vcm_pup" type="string">
+          <ipxact:name>hssi_refclk_divider_vcm_pup</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_vcm_pup</ipxact:displayName>
+          <ipxact:value>pup_off</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_clkbuf_sel" type="string">
+          <ipxact:name>hssi_refclk_divider_clkbuf_sel</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_clkbuf_sel</ipxact:displayName>
+          <ipxact:value>high_vcm</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_refclk_divider_iostandard" type="string">
+          <ipxact:name>hssi_refclk_divider_iostandard</ipxact:name>
+          <ipxact:displayName>hssi_refclk_divider_iostandard</ipxact:displayName>
+          <ipxact:value>lvpecl</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_silicon_rev" type="string">
+          <ipxact:name>atx_pll_silicon_rev</ipxact:name>
+          <ipxact:displayName>atx_pll_silicon_rev</ipxact:displayName>
+          <ipxact:value>20nm1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_is_cascaded_pll" type="string">
+          <ipxact:name>atx_pll_is_cascaded_pll</ipxact:name>
+          <ipxact:displayName>atx_pll_is_cascaded_pll</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_cgb_div" type="int">
+          <ipxact:name>atx_pll_cgb_div</ipxact:name>
+          <ipxact:displayName>atx_pll_cgb_div</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_pma_width" type="int">
+          <ipxact:name>atx_pll_pma_width</ipxact:name>
+          <ipxact:displayName>atx_pll_pma_width</ipxact:displayName>
+          <ipxact:value>64</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_lc_atb" type="string">
+          <ipxact:name>atx_pll_lc_atb</ipxact:name>
+          <ipxact:displayName>atx_pll_lc_atb</ipxact:displayName>
+          <ipxact:value>atb_selectdisable</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_cp_compensation_enable" type="string">
+          <ipxact:name>atx_pll_cp_compensation_enable</ipxact:name>
+          <ipxact:displayName>atx_pll_cp_compensation_enable</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_cp_current_setting" type="string">
+          <ipxact:name>atx_pll_cp_current_setting</ipxact:name>
+          <ipxact:displayName>atx_pll_cp_current_setting</ipxact:displayName>
+          <ipxact:value>cp_current_setting23</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_cp_testmode" type="string">
+          <ipxact:name>atx_pll_cp_testmode</ipxact:name>
+          <ipxact:displayName>atx_pll_cp_testmode</ipxact:displayName>
+          <ipxact:value>cp_normal</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_cp_lf_3rd_pole_freq" type="string">
+          <ipxact:name>atx_pll_cp_lf_3rd_pole_freq</ipxact:name>
+          <ipxact:displayName>atx_pll_cp_lf_3rd_pole_freq</ipxact:displayName>
+          <ipxact:value>lf_3rd_pole_setting2</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_lf_cbig_size" type="string">
+          <ipxact:name>atx_pll_lf_cbig_size</ipxact:name>
+          <ipxact:displayName>atx_pll_lf_cbig_size</ipxact:displayName>
+          <ipxact:value>lf_cbig_setting4</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_cp_lf_order" type="string">
+          <ipxact:name>atx_pll_cp_lf_order</ipxact:name>
+          <ipxact:displayName>atx_pll_cp_lf_order</ipxact:displayName>
+          <ipxact:value>lf_3rd_order</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_lf_resistance" type="string">
+          <ipxact:name>atx_pll_lf_resistance</ipxact:name>
+          <ipxact:displayName>atx_pll_lf_resistance</ipxact:displayName>
+          <ipxact:value>lf_setting1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_lf_ripplecap" type="string">
+          <ipxact:name>atx_pll_lf_ripplecap</ipxact:name>
+          <ipxact:displayName>atx_pll_lf_ripplecap</ipxact:displayName>
+          <ipxact:value>lf_ripple_cap_0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_cal_status" type="string">
+          <ipxact:name>atx_pll_cal_status</ipxact:name>
+          <ipxact:displayName>atx_pll_cal_status</ipxact:displayName>
+          <ipxact:value>cal_in_progress</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_bonding" type="string">
+          <ipxact:name>atx_pll_bonding</ipxact:name>
+          <ipxact:displayName>atx_pll_bonding</ipxact:displayName>
+          <ipxact:value>pll_bonding</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_expected_lc_boost_voltage" type="int">
+          <ipxact:name>atx_pll_expected_lc_boost_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_expected_lc_boost_voltage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_power_rail_et" type="int">
+          <ipxact:name>atx_pll_power_rail_et</ipxact:name>
+          <ipxact:displayName>atx_pll_power_rail_et</ipxact:displayName>
+          <ipxact:value>950</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_lc_vreg_boost_scratch" type="int">
+          <ipxact:name>atx_pll_dprio_lc_vreg_boost_scratch</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_lc_vreg_boost_scratch</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_lc_vreg1_boost_scratch" type="int">
+          <ipxact:name>atx_pll_dprio_lc_vreg1_boost_scratch</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_lc_vreg1_boost_scratch</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_clk_vreg_boost_scratch" type="int">
+          <ipxact:name>atx_pll_dprio_clk_vreg_boost_scratch</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_clk_vreg_boost_scratch</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_mcgb_vreg_boost_scratch" type="int">
+          <ipxact:name>atx_pll_dprio_mcgb_vreg_boost_scratch</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_mcgb_vreg_boost_scratch</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_vreg_boost_step_size" type="int">
+          <ipxact:name>atx_pll_dprio_vreg_boost_step_size</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_vreg_boost_step_size</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_vreg1_boost_step_size" type="int">
+          <ipxact:name>atx_pll_dprio_vreg1_boost_step_size</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_vreg1_boost_step_size</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_clk_vreg_boost_step_size" type="int">
+          <ipxact:name>atx_pll_dprio_clk_vreg_boost_step_size</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_clk_vreg_boost_step_size</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_mcgb_vreg_boost_step_size" type="int">
+          <ipxact:name>atx_pll_dprio_mcgb_vreg_boost_step_size</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_mcgb_vreg_boost_step_size</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_lc_vreg_boost_expected_voltage" type="int">
+          <ipxact:name>atx_pll_dprio_lc_vreg_boost_expected_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_lc_vreg_boost_expected_voltage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_lc_vreg1_boost_expected_voltage" type="int">
+          <ipxact:name>atx_pll_dprio_lc_vreg1_boost_expected_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_lc_vreg1_boost_expected_voltage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_clk_vreg_boost_expected_voltage" type="int">
+          <ipxact:name>atx_pll_dprio_clk_vreg_boost_expected_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_clk_vreg_boost_expected_voltage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dprio_mcgb_vreg_boost_expected_voltage" type="int">
+          <ipxact:name>atx_pll_dprio_mcgb_vreg_boost_expected_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_dprio_mcgb_vreg_boost_expected_voltage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_clk_high_perf_voltage" type="int">
+          <ipxact:name>atx_pll_clk_high_perf_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_clk_high_perf_voltage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_clk_mid_power_voltage" type="int">
+          <ipxact:name>atx_pll_clk_mid_power_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_clk_mid_power_voltage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_clk_low_power_voltage" type="int">
+          <ipxact:name>atx_pll_clk_low_power_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_clk_low_power_voltage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_tank_sel" type="string">
+          <ipxact:name>atx_pll_tank_sel</ipxact:name>
+          <ipxact:displayName>atx_pll_tank_sel</ipxact:displayName>
+          <ipxact:value>lctank1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_tank_band" type="string">
+          <ipxact:name>atx_pll_tank_band</ipxact:name>
+          <ipxact:displayName>atx_pll_tank_band</ipxact:displayName>
+          <ipxact:value>lc_band4</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_tank_voltage_coarse" type="string">
+          <ipxact:name>atx_pll_tank_voltage_coarse</ipxact:name>
+          <ipxact:displayName>atx_pll_tank_voltage_coarse</ipxact:displayName>
+          <ipxact:value>vreg_setting_coarse0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_tank_voltage_fine" type="string">
+          <ipxact:name>atx_pll_tank_voltage_fine</ipxact:name>
+          <ipxact:displayName>atx_pll_tank_voltage_fine</ipxact:displayName>
+          <ipxact:value>vreg_setting5</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_output_regulator_supply" type="string">
+          <ipxact:name>atx_pll_output_regulator_supply</ipxact:name>
+          <ipxact:displayName>atx_pll_output_regulator_supply</ipxact:displayName>
+          <ipxact:value>vreg1v_setting0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_overrange_voltage" type="string">
+          <ipxact:name>atx_pll_overrange_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_overrange_voltage</ipxact:displayName>
+          <ipxact:value>over_setting0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_underrange_voltage" type="string">
+          <ipxact:name>atx_pll_underrange_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_underrange_voltage</ipxact:displayName>
+          <ipxact:value>under_setting4</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_fb_select" type="string">
+          <ipxact:name>atx_pll_fb_select</ipxact:name>
+          <ipxact:displayName>atx_pll_fb_select</ipxact:displayName>
+          <ipxact:value>direct_fb</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_d2a_voltage" type="string">
+          <ipxact:name>atx_pll_d2a_voltage</ipxact:name>
+          <ipxact:displayName>atx_pll_d2a_voltage</ipxact:displayName>
+          <ipxact:value>d2a_setting_4</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dsm_mode" type="string">
+          <ipxact:name>atx_pll_dsm_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_dsm_mode</ipxact:displayName>
+          <ipxact:value>dsm_mode_integer</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dsm_out_sel" type="string">
+          <ipxact:name>atx_pll_dsm_out_sel</ipxact:name>
+          <ipxact:displayName>atx_pll_dsm_out_sel</ipxact:displayName>
+          <ipxact:value>pll_dsm_disable</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dsm_ecn_bypass" type="string">
+          <ipxact:name>atx_pll_dsm_ecn_bypass</ipxact:name>
+          <ipxact:displayName>atx_pll_dsm_ecn_bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dsm_ecn_test_en" type="string">
+          <ipxact:name>atx_pll_dsm_ecn_test_en</ipxact:name>
+          <ipxact:displayName>atx_pll_dsm_ecn_test_en</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dsm_fractional_division" type="string">
+          <ipxact:name>atx_pll_dsm_fractional_division</ipxact:name>
+          <ipxact:displayName>K counter (valid in fractional mode)</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_dsm_fractional_value_ready" type="string">
+          <ipxact:name>atx_pll_dsm_fractional_value_ready</ipxact:name>
+          <ipxact:displayName>atx_pll_dsm_fractional_value_ready</ipxact:displayName>
+          <ipxact:value>pll_k_ready</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_enable_lc_calibration" type="string">
+          <ipxact:name>atx_pll_enable_lc_calibration</ipxact:name>
+          <ipxact:displayName>atx_pll_enable_lc_calibration</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_enable_lc_vreg_calibration" type="string">
+          <ipxact:name>atx_pll_enable_lc_vreg_calibration</ipxact:name>
+          <ipxact:displayName>atx_pll_enable_lc_vreg_calibration</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_iqclk_mux_sel" type="string">
+          <ipxact:name>atx_pll_iqclk_mux_sel</ipxact:name>
+          <ipxact:displayName>atx_pll_iqclk_mux_sel</ipxact:displayName>
+          <ipxact:value>iqtxrxclk0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_vco_bypass_enable" type="string">
+          <ipxact:name>atx_pll_vco_bypass_enable</ipxact:name>
+          <ipxact:displayName>atx_pll_vco_bypass_enable</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_l_counter" type="int">
+          <ipxact:name>atx_pll_l_counter</ipxact:name>
+          <ipxact:displayName>L counter (valid in non-cascade mode)</ipxact:displayName>
+          <ipxact:value>2</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_l_counter_enable" type="string">
+          <ipxact:name>atx_pll_l_counter_enable</ipxact:name>
+          <ipxact:displayName>atx_pll_l_counter_enable</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_cascadeclk_test" type="string">
+          <ipxact:name>atx_pll_cascadeclk_test</ipxact:name>
+          <ipxact:displayName>atx_pll_cascadeclk_test</ipxact:displayName>
+          <ipxact:value>cascadetest_off</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_hclk_divide" type="int">
+          <ipxact:name>atx_pll_hclk_divide</ipxact:name>
+          <ipxact:displayName>atx_pll_hclk_divide</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_enable_hclk" type="string">
+          <ipxact:name>atx_pll_enable_hclk</ipxact:name>
+          <ipxact:displayName>atx_pll_enable_hclk</ipxact:displayName>
+          <ipxact:value>hclk_disabled</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_m_counter" type="int">
+          <ipxact:name>atx_pll_m_counter</ipxact:name>
+          <ipxact:displayName>M counter</ipxact:displayName>
+          <ipxact:value>64</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_ref_clk_div" type="int">
+          <ipxact:name>atx_pll_ref_clk_div</ipxact:name>
+          <ipxact:displayName>N counter</ipxact:displayName>
+          <ipxact:value>8</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_bandwidth_range_high" type="string">
+          <ipxact:name>atx_pll_bandwidth_range_high</ipxact:name>
+          <ipxact:displayName>atx_pll_bandwidth_range_high</ipxact:displayName>
+          <ipxact:value>0 hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_bandwidth_range_low" type="string">
+          <ipxact:name>atx_pll_bandwidth_range_low</ipxact:name>
+          <ipxact:displayName>atx_pll_bandwidth_range_low</ipxact:displayName>
+          <ipxact:value>0 hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_bw_sel" type="string">
+          <ipxact:name>atx_pll_bw_sel</ipxact:name>
+          <ipxact:displayName>atx_pll_bw_sel</ipxact:displayName>
+          <ipxact:value>low</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_calibration_mode" type="string">
+          <ipxact:name>atx_pll_calibration_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_calibration_mode</ipxact:displayName>
+          <ipxact:value>cal_off</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_datarate" type="string">
+          <ipxact:name>atx_pll_datarate</ipxact:name>
+          <ipxact:displayName>Datarate</ipxact:displayName>
+          <ipxact:value>10312500000 bps</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_device_variant" type="string">
+          <ipxact:name>atx_pll_device_variant</ipxact:name>
+          <ipxact:displayName>atx_pll_device_variant</ipxact:displayName>
+          <ipxact:value>device1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_pfd" type="string">
+          <ipxact:name>atx_pll_f_max_pfd</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_pfd</ipxact:displayName>
+          <ipxact:value>160000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_ref" type="string">
+          <ipxact:name>atx_pll_f_max_ref</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_ref</ipxact:displayName>
+          <ipxact:value>800000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_tank_0" type="string">
+          <ipxact:name>atx_pll_f_max_tank_0</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_tank_0</ipxact:displayName>
+          <ipxact:value>8800000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_tank_1" type="string">
+          <ipxact:name>atx_pll_f_max_tank_1</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_tank_1</ipxact:displayName>
+          <ipxact:value>11400000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_tank_2" type="string">
+          <ipxact:name>atx_pll_f_max_tank_2</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_tank_2</ipxact:displayName>
+          <ipxact:value>14400000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_vco" type="string">
+          <ipxact:name>atx_pll_f_max_vco</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_vco</ipxact:displayName>
+          <ipxact:value>14400000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_x1" type="string">
+          <ipxact:name>atx_pll_f_max_x1</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_x1</ipxact:displayName>
+          <ipxact:value>8700000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_min_pfd" type="string">
+          <ipxact:name>atx_pll_f_min_pfd</ipxact:name>
+          <ipxact:displayName>atx_pll_f_min_pfd</ipxact:displayName>
+          <ipxact:value>61440000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_min_ref" type="string">
+          <ipxact:name>atx_pll_f_min_ref</ipxact:name>
+          <ipxact:displayName>atx_pll_f_min_ref</ipxact:displayName>
+          <ipxact:value>61440000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_min_tank_0" type="string">
+          <ipxact:name>atx_pll_f_min_tank_0</ipxact:name>
+          <ipxact:displayName>atx_pll_f_min_tank_0</ipxact:displayName>
+          <ipxact:value>6500000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_min_tank_1" type="string">
+          <ipxact:name>atx_pll_f_min_tank_1</ipxact:name>
+          <ipxact:displayName>atx_pll_f_min_tank_1</ipxact:displayName>
+          <ipxact:value>8800000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_min_tank_2" type="string">
+          <ipxact:name>atx_pll_f_min_tank_2</ipxact:name>
+          <ipxact:displayName>atx_pll_f_min_tank_2</ipxact:displayName>
+          <ipxact:value>11400000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_min_vco" type="string">
+          <ipxact:name>atx_pll_f_min_vco</ipxact:name>
+          <ipxact:displayName>atx_pll_f_min_vco</ipxact:displayName>
+          <ipxact:value>7200000000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_initial_settings" type="string">
+          <ipxact:name>atx_pll_initial_settings</ipxact:name>
+          <ipxact:displayName>atx_pll_initial_settings</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_l_counter_scratch" type="int">
+          <ipxact:name>atx_pll_l_counter_scratch</ipxact:name>
+          <ipxact:displayName>atx_pll_l_counter_scratch</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_lc_mode" type="string">
+          <ipxact:name>atx_pll_lc_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_lc_mode</ipxact:displayName>
+          <ipxact:value>lccmu_normal</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_n_counter_scratch" type="int">
+          <ipxact:name>atx_pll_n_counter_scratch</ipxact:name>
+          <ipxact:displayName>atx_pll_n_counter_scratch</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_output_clock_frequency" type="string">
+          <ipxact:name>atx_pll_output_clock_frequency</ipxact:name>
+          <ipxact:displayName>atx_pll_output_clock_frequency</ipxact:displayName>
+          <ipxact:value>5156250000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_power_mode" type="string">
+          <ipxact:name>atx_pll_power_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_power_mode</ipxact:displayName>
+          <ipxact:value>low_power</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_powerdown_mode" type="string">
+          <ipxact:name>atx_pll_powerdown_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_powerdown_mode</ipxact:displayName>
+          <ipxact:value>powerup</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_prot_mode" type="string">
+          <ipxact:name>atx_pll_prot_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_prot_mode</ipxact:displayName>
+          <ipxact:value>basic_tx</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_reference_clock_frequency" type="string">
+          <ipxact:name>atx_pll_reference_clock_frequency</ipxact:name>
+          <ipxact:displayName>atx_pll_reference_clock_frequency</ipxact:displayName>
+          <ipxact:value>644531250 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_side" type="string">
+          <ipxact:name>atx_pll_side</ipxact:name>
+          <ipxact:displayName>atx_pll_side</ipxact:displayName>
+          <ipxact:value>side_unknown</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_pm_speed_grade" type="string">
+          <ipxact:name>atx_pll_pm_speed_grade</ipxact:name>
+          <ipxact:displayName>atx_pll_pm_speed_grade</ipxact:displayName>
+          <ipxact:value>e4</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_sup_mode" type="string">
+          <ipxact:name>atx_pll_sup_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_sup_mode</ipxact:displayName>
+          <ipxact:value>user_mode</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_top_or_bottom" type="string">
+          <ipxact:name>atx_pll_top_or_bottom</ipxact:name>
+          <ipxact:displayName>atx_pll_top_or_bottom</ipxact:displayName>
+          <ipxact:value>tb_unknown</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_vccdreg_clk" type="string">
+          <ipxact:name>atx_pll_vccdreg_clk</ipxact:name>
+          <ipxact:displayName>atx_pll_vccdreg_clk</ipxact:displayName>
+          <ipxact:value>vreg_clk5</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_vccdreg_fb" type="string">
+          <ipxact:name>atx_pll_vccdreg_fb</ipxact:name>
+          <ipxact:displayName>atx_pll_vccdreg_fb</ipxact:displayName>
+          <ipxact:value>vreg_fb8</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_vccdreg_fw" type="string">
+          <ipxact:name>atx_pll_vccdreg_fw</ipxact:name>
+          <ipxact:displayName>atx_pll_vccdreg_fw</ipxact:displayName>
+          <ipxact:value>vreg_fw5</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_regulator_bypass" type="string">
+          <ipxact:name>atx_pll_regulator_bypass</ipxact:name>
+          <ipxact:displayName>atx_pll_regulator_bypass</ipxact:displayName>
+          <ipxact:value>reg_enable</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_vco_freq" type="string">
+          <ipxact:name>atx_pll_vco_freq</ipxact:name>
+          <ipxact:displayName>VCO Frequency</ipxact:displayName>
+          <ipxact:value>10312500000 Hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_vco_fractional" type="string">
+          <ipxact:name>atx_pll_f_max_vco_fractional</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_vco_fractional</ipxact:displayName>
+          <ipxact:value>0 hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_pfd_fractional" type="string">
+          <ipxact:name>atx_pll_f_max_pfd_fractional</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_pfd_fractional</ipxact:displayName>
+          <ipxact:value>0 hz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_min_fractional_percentage" type="int">
+          <ipxact:name>atx_pll_min_fractional_percentage</ipxact:name>
+          <ipxact:displayName>atx_pll_min_fractional_percentage</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_max_fractional_percentage" type="int">
+          <ipxact:name>atx_pll_max_fractional_percentage</ipxact:name>
+          <ipxact:displayName>atx_pll_max_fractional_percentage</ipxact:displayName>
+          <ipxact:value>100</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_analog_mode" type="string">
+          <ipxact:name>atx_pll_analog_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_analog_mode</ipxact:displayName>
+          <ipxact:value>user_custom</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_is_otn" type="string">
+          <ipxact:name>atx_pll_is_otn</ipxact:name>
+          <ipxact:displayName>atx_pll_is_otn</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_is_sdi" type="string">
+          <ipxact:name>atx_pll_is_sdi</ipxact:name>
+          <ipxact:displayName>atx_pll_is_sdi</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_primary_use" type="string">
+          <ipxact:name>atx_pll_primary_use</ipxact:name>
+          <ipxact:displayName>atx_pll_primary_use</ipxact:displayName>
+          <ipxact:value>hssi_x1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_fpll_refclk_selection" type="string">
+          <ipxact:name>atx_pll_fpll_refclk_selection</ipxact:name>
+          <ipxact:displayName>L cascade predivider/VCO divider(valid in cascade mode) </ipxact:displayName>
+          <ipxact:value>select_vco_output</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_lc_to_fpll_l_counter_scratch" type="int">
+          <ipxact:name>atx_pll_lc_to_fpll_l_counter_scratch</ipxact:name>
+          <ipxact:displayName>L cascade counter (valid in cascade mode)</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_lc_to_fpll_l_counter" type="string">
+          <ipxact:name>atx_pll_lc_to_fpll_l_counter</ipxact:name>
+          <ipxact:displayName>atx_pll_lc_to_fpll_l_counter</ipxact:displayName>
+          <ipxact:value>lcounter_setting0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_pfd_delay_compensation" type="string">
+          <ipxact:name>atx_pll_pfd_delay_compensation</ipxact:name>
+          <ipxact:displayName>atx_pll_pfd_delay_compensation</ipxact:displayName>
+          <ipxact:value>normal_delay</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_xcpvco_xchgpmplf_cp_current_boost" type="string">
+          <ipxact:name>atx_pll_xcpvco_xchgpmplf_cp_current_boost</ipxact:name>
+          <ipxact:displayName>atx_pll_xcpvco_xchgpmplf_cp_current_boost</ipxact:displayName>
+          <ipxact:value>normal_setting</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_f_max_lcnt_fpll_cascading" type="string">
+          <ipxact:name>atx_pll_f_max_lcnt_fpll_cascading</ipxact:name>
+          <ipxact:displayName>atx_pll_f_max_lcnt_fpll_cascading</ipxact:displayName>
+          <ipxact:value>1200000000</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_pfd_pulse_width" type="string">
+          <ipxact:name>atx_pll_pfd_pulse_width</ipxact:name>
+          <ipxact:displayName>atx_pll_pfd_pulse_width</ipxact:displayName>
+          <ipxact:value>pulse_width_setting0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_enable_idle_atx_pll_support" type="string">
+          <ipxact:name>atx_pll_enable_idle_atx_pll_support</ipxact:name>
+          <ipxact:displayName>atx_pll_enable_idle_atx_pll_support</ipxact:displayName>
+          <ipxact:value>idle_none</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_advanced_options" type="int">
+          <ipxact:name>enable_advanced_options</ipxact:name>
+          <ipxact:displayName>enable_advanced_options</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_hip_options" type="int">
+          <ipxact:name>enable_hip_options</ipxact:name>
+          <ipxact:displayName>enable_hip_options</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_manual_configuration" type="int">
+          <ipxact:name>enable_manual_configuration</ipxact:name>
+          <ipxact:displayName>enable_manual_configuration</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="generate_docs" type="int">
+          <ipxact:name>generate_docs</ipxact:name>
+          <ipxact:displayName>Generate parameter documentation file</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="generate_add_hdl_instance_example" type="int">
+          <ipxact:name>generate_add_hdl_instance_example</ipxact:name>
+          <ipxact:displayName>Generate '_hw.tcl' 'add_hdl_instance' example file</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="device_family" type="string">
+          <ipxact:name>device_family</ipxact:name>
+          <ipxact:displayName>device_family</ipxact:displayName>
+          <ipxact:value>Cyclone 10 GX</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="device" type="string">
+          <ipxact:name>device</ipxact:name>
+          <ipxact:displayName>device</ipxact:displayName>
+          <ipxact:value>10CX220YF780E5G</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="base_device" type="string">
+          <ipxact:name>base_device</ipxact:name>
+          <ipxact:displayName>base_device</ipxact:displayName>
+          <ipxact:value>NIGHTFURY1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="test_mode" type="int">
+          <ipxact:name>test_mode</ipxact:name>
+          <ipxact:displayName>Enable Test Mode</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_pld_atx_cal_busy_port" type="int">
+          <ipxact:name>enable_pld_atx_cal_busy_port</ipxact:name>
+          <ipxact:displayName>enable_pld_atx_cal_busy_port</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_debug_ports_parameters" type="int">
+          <ipxact:name>enable_debug_ports_parameters</ipxact:name>
+          <ipxact:displayName>Enable debug ports &amp; parameters</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="support_mode" type="string">
+          <ipxact:name>support_mode</ipxact:name>
+          <ipxact:displayName>Support mode</ipxact:displayName>
+          <ipxact:value>user_mode</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="message_level" type="string">
+          <ipxact:name>message_level</ipxact:name>
+          <ipxact:displayName>Message level for rule violations</ipxact:displayName>
+          <ipxact:value>error</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="pma_speedgrade" type="string">
+          <ipxact:name>pma_speedgrade</ipxact:name>
+          <ipxact:displayName>pma_speedgrade</ipxact:displayName>
+          <ipxact:value>e4</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="device_revision" type="string">
+          <ipxact:name>device_revision</ipxact:name>
+          <ipxact:displayName>device_revision</ipxact:displayName>
+          <ipxact:value>20nm1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="prot_mode" type="string">
+          <ipxact:name>prot_mode</ipxact:name>
+          <ipxact:displayName>Protocol mode</ipxact:displayName>
+          <ipxact:value>Basic</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="prot_mode_fnl" type="string">
+          <ipxact:name>prot_mode_fnl</ipxact:name>
+          <ipxact:displayName>prot_mode_fnl</ipxact:displayName>
+          <ipxact:value>basic_tx</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="primary_use" type="string">
+          <ipxact:name>primary_use</ipxact:name>
+          <ipxact:displayName>primary_use</ipxact:displayName>
+          <ipxact:value>hssi_x1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="bw_sel" type="string">
+          <ipxact:name>bw_sel</ipxact:name>
+          <ipxact:displayName>Bandwidth</ipxact:displayName>
+          <ipxact:value>low</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="refclk_cnt" type="int">
+          <ipxact:name>refclk_cnt</ipxact:name>
+          <ipxact:displayName>Number of PLL reference clocks</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="refclk_index" type="int">
+          <ipxact:name>refclk_index</ipxact:name>
+          <ipxact:displayName>Selected reference clock source</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="silicon_rev" type="bit">
+          <ipxact:name>silicon_rev</ipxact:name>
+          <ipxact:displayName>Silicon revision ES</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="fb_select_fnl" type="string">
+          <ipxact:name>fb_select_fnl</ipxact:name>
+          <ipxact:displayName>fb_select_fnl</ipxact:displayName>
+          <ipxact:value>direct_fb</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="primary_pll_buffer" type="string">
+          <ipxact:name>primary_pll_buffer</ipxact:name>
+          <ipxact:displayName>Primary PLL clock output buffer</ipxact:displayName>
+          <ipxact:value>GX clock output buffer</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_8G_buffer_fnl" type="string">
+          <ipxact:name>enable_8G_buffer_fnl</ipxact:name>
+          <ipxact:displayName>enable_8G_buffer_fnl</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_16G_buffer_fnl" type="string">
+          <ipxact:name>enable_16G_buffer_fnl</ipxact:name>
+          <ipxact:displayName>enable_16G_buffer_fnl</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_8G_path" type="int">
+          <ipxact:name>enable_8G_path</ipxact:name>
+          <ipxact:displayName>Enable PLL GX clock output port</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_16G_path" type="int">
+          <ipxact:name>enable_16G_path</ipxact:name>
+          <ipxact:displayName>Enable PLL GT clock output port</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_pcie_clk" type="int">
+          <ipxact:name>enable_pcie_clk</ipxact:name>
+          <ipxact:displayName>Enable PCIe clock output port</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_cascade_out" type="int">
+          <ipxact:name>enable_cascade_out</ipxact:name>
+          <ipxact:displayName>Enable cascade clock output port</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_atx_to_fpll_cascade_out" type="int">
+          <ipxact:name>enable_atx_to_fpll_cascade_out</ipxact:name>
+          <ipxact:displayName>Enable ATX to FPLL cascade clock output port</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_hip_cal_done_port" type="int">
+          <ipxact:name>enable_hip_cal_done_port</ipxact:name>
+          <ipxact:displayName>Enable calibration status ports for HIP</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_hip_cal_en" type="int">
+          <ipxact:name>set_hip_cal_en</ipxact:name>
+          <ipxact:displayName>Enable PCIe hard IP calibration</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hip_cal_en" type="string">
+          <ipxact:name>hip_cal_en</ipxact:name>
+          <ipxact:displayName>hip_cal_en</ipxact:displayName>
+          <ipxact:value>disable</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="dsm_mode" type="string">
+          <ipxact:name>dsm_mode</ipxact:name>
+          <ipxact:displayName>dsm_mode</ipxact:displayName>
+          <ipxact:value>dsm_mode_integer</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_output_clock_frequency" type="real">
+          <ipxact:name>set_output_clock_frequency</ipxact:name>
+          <ipxact:displayName>PLL output frequency</ipxact:displayName>
+          <ipxact:value>5156.25</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="output_clock_datarate" type="real">
+          <ipxact:name>output_clock_datarate</ipxact:name>
+          <ipxact:displayName>PLL output datarate</ipxact:displayName>
+          <ipxact:value>10312.5</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="output_clock_frequency" type="string">
+          <ipxact:name>output_clock_frequency</ipxact:name>
+          <ipxact:displayName>PLL output frequency</ipxact:displayName>
+          <ipxact:value>5156.25 MHz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="vco_freq" type="string">
+          <ipxact:name>vco_freq</ipxact:name>
+          <ipxact:displayName>vco_freq</ipxact:displayName>
+          <ipxact:value>10312.5 MHz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="datarate" type="string">
+          <ipxact:name>datarate</ipxact:name>
+          <ipxact:displayName>datarate</ipxact:displayName>
+          <ipxact:value>10312.5 Mbps</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_fractional" type="int">
+          <ipxact:name>enable_fractional</ipxact:name>
+          <ipxact:displayName>enable_fractional</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_auto_reference_clock_frequency" type="real">
+          <ipxact:name>set_auto_reference_clock_frequency</ipxact:name>
+          <ipxact:displayName>PLL integer reference clock frequency</ipxact:displayName>
+          <ipxact:value>644.53125</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_manual_reference_clock_frequency" type="real">
+          <ipxact:name>set_manual_reference_clock_frequency</ipxact:name>
+          <ipxact:displayName>PLL fractional reference clock frequency</ipxact:displayName>
+          <ipxact:value>200.0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="reference_clock_frequency_fnl" type="string">
+          <ipxact:name>reference_clock_frequency_fnl</ipxact:name>
+          <ipxact:displayName>reference_clock_frequency_fnl</ipxact:displayName>
+          <ipxact:value>644.531250 MHz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_fref_clock_frequency" type="real">
+          <ipxact:name>set_fref_clock_frequency</ipxact:name>
+          <ipxact:displayName>PLL fractional reference clock frequency</ipxact:displayName>
+          <ipxact:value>156.25</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="feedback_clock_frequency_fnl" type="real">
+          <ipxact:name>feedback_clock_frequency_fnl</ipxact:name>
+          <ipxact:displayName>External feedback frequency</ipxact:displayName>
+          <ipxact:value>156.25</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="select_manual_config" type="bit">
+          <ipxact:name>select_manual_config</ipxact:name>
+          <ipxact:displayName>Configure counters manually</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="m_counter" type="int">
+          <ipxact:name>m_counter</ipxact:name>
+          <ipxact:displayName>Multiply factor (M-Counter)</ipxact:displayName>
+          <ipxact:value>64</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="effective_m_counter" type="int">
+          <ipxact:name>effective_m_counter</ipxact:name>
+          <ipxact:displayName>Effective M-Counter</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_m_counter" type="int">
+          <ipxact:name>set_m_counter</ipxact:name>
+          <ipxact:displayName>Multiply factor (M-Counter)</ipxact:displayName>
+          <ipxact:value>24</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="ref_clk_div" type="int">
+          <ipxact:name>ref_clk_div</ipxact:name>
+          <ipxact:displayName>Divide factor (N-Counter)</ipxact:displayName>
+          <ipxact:value>8</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_ref_clk_div" type="int">
+          <ipxact:name>set_ref_clk_div</ipxact:name>
+          <ipxact:displayName>Divide factor (N-Counter)</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="l_counter" type="int">
+          <ipxact:name>l_counter</ipxact:name>
+          <ipxact:displayName>Divide factor (L-Counter)</ipxact:displayName>
+          <ipxact:value>2</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_l_counter" type="int">
+          <ipxact:name>set_l_counter</ipxact:name>
+          <ipxact:displayName>Divide factor (L-Counter)</ipxact:displayName>
+          <ipxact:value>16</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="l_cascade_counter" type="int">
+          <ipxact:name>l_cascade_counter</ipxact:name>
+          <ipxact:displayName>Divide factor (L-Cascade-Counter)</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_l_cascade_counter" type="int">
+          <ipxact:name>set_l_cascade_counter</ipxact:name>
+          <ipxact:displayName>Divide factor (L-Cascade Counter)</ipxact:displayName>
+          <ipxact:value>15</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="l_cascade_predivider" type="int">
+          <ipxact:name>l_cascade_predivider</ipxact:name>
+          <ipxact:displayName>Divide factor (L-Cascade-Predivider)</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_l_cascade_predivider" type="int">
+          <ipxact:name>set_l_cascade_predivider</ipxact:name>
+          <ipxact:displayName>predivide factor (L-Cascade Predivider)</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="k_counter" type="longint">
+          <ipxact:name>k_counter</ipxact:name>
+          <ipxact:displayName>Fractional multiply factor (K)</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_k_counter" type="longint">
+          <ipxact:name>set_k_counter</ipxact:name>
+          <ipxact:displayName>Fractional multiply factor (K)</ipxact:displayName>
+          <ipxact:value>2000000000</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="auto_list" type="string">
+          <ipxact:name>auto_list</ipxact:name>
+          <ipxact:displayName>auto_list</ipxact:displayName>
+          <ipxact:value>62.123494 {m 83 effective_m 83 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 62.881098 {m 82 effective_m 82 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 63.657407 {m 81 effective_m 81 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 64.453125 {m 80 effective_m 80 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 65.268987 {m 79 effective_m 79 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 66.105769 {m 78 effective_m 78 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 66.964286 {m 77 effective_m 77 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 67.845395 {m 76 effective_m 76 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 68.750000 {m 75 effective_m 75 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 69.679054 {m 74 effective_m 74 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 70.633562 {m 73 effective_m 73 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 71.614583 {m 72 effective_m 72 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 72.623239 {m 71 effective_m 71 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 73.660714 {m 70 effective_m 70 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 74.728261 {m 69 effective_m 69 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 75.827206 {m 68 effective_m 68 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 76.958955 {m 67 effective_m 67 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 78.125000 {m 66 effective_m 66 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 79.326923 {m 65 effective_m 65 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 80.566406 {m 64 effective_m 64 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 81.845238 {m 63 effective_m 63 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 83.165323 {m 62 effective_m 62 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 84.528689 {m 61 effective_m 61 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 85.937500 {m 60 effective_m 60 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 87.394068 {m 59 effective_m 59 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 88.900862 {m 58 effective_m 58 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 90.460526 {m 57 effective_m 57 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 92.075893 {m 56 effective_m 56 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 93.750000 {m 55 effective_m 55 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 95.486111 {m 54 effective_m 54 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 97.287736 {m 53 effective_m 53 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 99.158654 {m 52 effective_m 52 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 101.102941 {m 51 effective_m 51 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 103.125000 {m 50 effective_m 50 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 105.229592 {m 49 effective_m 49 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 107.421875 {m 48 effective_m 48 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 109.707447 {m 47 effective_m 47 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 112.092391 {m 46 effective_m 46 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 114.583333 {m 45 effective_m 45 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 117.187500 {m 44 effective_m 44 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 119.912791 {m 43 effective_m 43 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 122.767857 {m 42 effective_m 42 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 124.246988 {m 83 effective_m 83 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 125.762195 {m 41 effective_m 41 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 127.314815 {m 81 effective_m 81 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 128.906250 {m 40 effective_m 40 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 130.537975 {m 79 effective_m 79 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 132.211538 {m 39 effective_m 39 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 133.928571 {m 77 effective_m 77 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 135.690789 {m 38 effective_m 38 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 137.500000 {m 75 effective_m 75 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 139.358108 {m 37 effective_m 37 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 141.267123 {m 73 effective_m 73 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 143.229167 {m 36 effective_m 36 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 145.246479 {m 71 effective_m 71 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 147.321429 {m 35 effective_m 35 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 149.456522 {m 69 effective_m 69 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 151.654412 {m 34 effective_m 34 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 153.917910 {m 67 effective_m 67 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 156.250000 {m 33 effective_m 33 n 1 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 158.653846 {m 65 effective_m 65 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 161.132812 {m 64 effective_m 64 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 163.690476 {m 63 effective_m 63 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 166.330645 {m 62 effective_m 62 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 169.057377 {m 61 effective_m 61 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 171.875000 {m 60 effective_m 60 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 174.788136 {m 59 effective_m 59 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 177.801724 {m 58 effective_m 58 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 180.921053 {m 57 effective_m 57 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 184.151786 {m 56 effective_m 56 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 187.500000 {m 55 effective_m 55 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 190.972222 {m 54 effective_m 54 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 194.575472 {m 53 effective_m 53 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 198.317308 {m 52 effective_m 52 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 202.205882 {m 51 effective_m 51 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 206.250000 {m 50 effective_m 50 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 210.459184 {m 49 effective_m 49 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 214.843750 {m 48 effective_m 48 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 219.414894 {m 47 effective_m 47 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 224.184783 {m 46 effective_m 46 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 229.166667 {m 45 effective_m 45 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 234.375000 {m 44 effective_m 44 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 239.825581 {m 43 effective_m 43 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 245.535714 {m 42 effective_m 42 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 248.493976 {m 83 effective_m 83 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 251.524390 {m 41 effective_m 41 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 254.629630 {m 81 effective_m 81 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 257.812500 {m 40 effective_m 40 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 261.075949 {m 79 effective_m 79 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 264.423077 {m 39 effective_m 39 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 267.857143 {m 77 effective_m 77 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 271.381579 {m 38 effective_m 38 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 275.000000 {m 75 effective_m 75 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 278.716216 {m 37 effective_m 37 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 282.534247 {m 73 effective_m 73 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 286.458333 {m 36 effective_m 36 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 290.492958 {m 71 effective_m 71 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 294.642857 {m 35 effective_m 35 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 298.913043 {m 69 effective_m 69 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 303.308824 {m 34 effective_m 34 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 307.835821 {m 67 effective_m 67 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 312.500000 {m 33 effective_m 33 n 2 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 317.307692 {m 65 effective_m 65 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 322.265625 {m 64 effective_m 64 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 327.380952 {m 63 effective_m 63 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 332.661290 {m 62 effective_m 62 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 338.114754 {m 61 effective_m 61 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 343.750000 {m 60 effective_m 60 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 349.576271 {m 59 effective_m 59 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 355.603448 {m 58 effective_m 58 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 361.842105 {m 57 effective_m 57 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 368.303571 {m 56 effective_m 56 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 375.000000 {m 55 effective_m 55 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 381.944444 {m 54 effective_m 54 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 389.150943 {m 53 effective_m 53 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 396.634615 {m 52 effective_m 52 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 404.411765 {m 51 effective_m 51 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 412.500000 {m 50 effective_m 50 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 420.918367 {m 49 effective_m 49 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 429.687500 {m 48 effective_m 48 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 438.829787 {m 47 effective_m 47 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 448.369565 {m 46 effective_m 46 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 458.333333 {m 45 effective_m 45 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 468.750000 {m 44 effective_m 44 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 479.651163 {m 43 effective_m 43 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 491.071429 {m 42 effective_m 42 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 496.987952 {m 83 effective_m 83 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 503.048780 {m 41 effective_m 41 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 509.259259 {m 81 effective_m 81 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 515.625000 {m 40 effective_m 40 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 522.151899 {m 79 effective_m 79 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 528.846154 {m 39 effective_m 39 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 535.714286 {m 77 effective_m 77 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 542.763158 {m 38 effective_m 38 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 550.000000 {m 75 effective_m 75 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 557.432432 {m 37 effective_m 37 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 565.068493 {m 73 effective_m 73 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 572.916667 {m 36 effective_m 36 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 580.985915 {m 71 effective_m 71 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 589.285714 {m 35 effective_m 35 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 597.826087 {m 69 effective_m 69 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 606.617647 {m 34 effective_m 34 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 615.671642 {m 67 effective_m 67 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 625.000000 {m 33 effective_m 33 n 4 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 634.615385 {m 65 effective_m 65 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 644.531250 {m 64 effective_m 64 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 654.761905 {m 63 effective_m 63 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 665.322581 {m 62 effective_m 62 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 676.229508 {m 61 effective_m 61 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 687.500000 {m 60 effective_m 60 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 699.152542 {m 59 effective_m 59 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 711.206897 {m 58 effective_m 58 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 723.684211 {m 57 effective_m 57 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 736.607143 {m 56 effective_m 56 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 750.000000 {m 55 effective_m 55 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 763.888889 {m 54 effective_m 54 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 778.301887 {m 53 effective_m 53 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0} 793.269231 {m 52 effective_m 52 n 8 l 2 l_cascade 1 l_cascade_predivider 1 k 1 tank_sel lctank2 tank_band lc_band0}</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="manual_list" type="string">
+          <ipxact:name>manual_list</ipxact:name>
+          <ipxact:displayName>manual_list</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="pll_setting" type="string">
+          <ipxact:name>pll_setting</ipxact:name>
+          <ipxact:displayName>pll_setting</ipxact:displayName>
+          <ipxact:value>refclk {644.531250 MHz} m_cnt 64 n_cnt 8 l_cnt 2 k_cnt 1 l_cascade 1 l_cascade_predivider 1 outclk {5156.25 MHz}</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_fb_comp_bonding_fnl" type="int">
+          <ipxact:name>enable_fb_comp_bonding_fnl</ipxact:name>
+          <ipxact:displayName>enable_fb_comp_bonding_fnl</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="check_output_ports_pll" type="int">
+          <ipxact:name>check_output_ports_pll</ipxact:name>
+          <ipxact:displayName>check_output_ports_pll</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="iqclk_mux_sel" type="string">
+          <ipxact:name>iqclk_mux_sel</ipxact:name>
+          <ipxact:displayName>iqclk_mux_sel</ipxact:displayName>
+          <ipxact:value>iqtxrxclk0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="set_altera_xcvr_atx_pll_a10_calibration_en" type="int">
+          <ipxact:name>set_altera_xcvr_atx_pll_a10_calibration_en</ipxact:name>
+          <ipxact:displayName>Enable calibration</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="calibration_en" type="string">
+          <ipxact:name>calibration_en</ipxact:name>
+          <ipxact:displayName>calibration_en</ipxact:displayName>
+          <ipxact:value>enable</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_analog_resets" type="int">
+          <ipxact:name>enable_analog_resets</ipxact:name>
+          <ipxact:displayName>Enable pll_powerdown and mcgb_rst connections</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_ext_lockdetect_ports" type="int">
+          <ipxact:name>enable_ext_lockdetect_ports</ipxact:name>
+          <ipxact:displayName>Enable clklow and fref ports</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="is_c10" type="int">
+          <ipxact:name>is_c10</ipxact:name>
+          <ipxact:displayName>is_c10</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="atx_pll_bonding_mode" type="string">
+          <ipxact:name>atx_pll_bonding_mode</ipxact:name>
+          <ipxact:displayName>atx_pll_bonding_mode</ipxact:displayName>
+          <ipxact:value>cpri_bonding</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="lc_refclk_select" type="int">
+          <ipxact:name>lc_refclk_select</ipxact:name>
+          <ipxact:displayName>lc_refclk_select</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_mcgb" type="int">
+          <ipxact:name>enable_mcgb</ipxact:name>
+          <ipxact:displayName>Include Master Clock Generation Block</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mcgb_div" type="int">
+          <ipxact:name>mcgb_div</ipxact:name>
+          <ipxact:displayName>Clock division factor</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mcgb_div_fnl" type="int">
+          <ipxact:name>mcgb_div_fnl</ipxact:name>
+          <ipxact:displayName>mcgb_div_fnl</ipxact:displayName>
+          <ipxact:value>1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_hfreq_clk" type="int">
+          <ipxact:name>enable_hfreq_clk</ipxact:name>
+          <ipxact:displayName>Enable x6/xN non-bonded high-speed clock output port</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_mcgb_pcie_clksw" type="int">
+          <ipxact:name>enable_mcgb_pcie_clksw</ipxact:name>
+          <ipxact:displayName>Enable PCIe clock switch interface</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mcgb_aux_clkin_cnt" type="int">
+          <ipxact:name>mcgb_aux_clkin_cnt</ipxact:name>
+          <ipxact:displayName>Number of auxiliary MCGB clock input ports.</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mcgb_in_clk_freq" type="real">
+          <ipxact:name>mcgb_in_clk_freq</ipxact:name>
+          <ipxact:displayName>MCGB input clock frequency</ipxact:displayName>
+          <ipxact:value>5156.25</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mcgb_out_datarate" type="real">
+          <ipxact:name>mcgb_out_datarate</ipxact:name>
+          <ipxact:displayName>MCGB output data rate</ipxact:displayName>
+          <ipxact:value>10312.5</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_bonding_clks" type="int">
+          <ipxact:name>enable_bonding_clks</ipxact:name>
+          <ipxact:displayName>Enable bonding clock output ports</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_fb_comp_bonding" type="int">
+          <ipxact:name>enable_fb_comp_bonding</ipxact:name>
+          <ipxact:displayName>Enable feedback compensation bonding</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mcgb_enable_iqtxrxclk" type="string">
+          <ipxact:name>mcgb_enable_iqtxrxclk</ipxact:name>
+          <ipxact:displayName>mcgb_enable_iqtxrxclk</ipxact:displayName>
+          <ipxact:value>disable_iqtxrxclk</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="pma_width" type="int">
+          <ipxact:name>pma_width</ipxact:name>
+          <ipxact:displayName>PMA interface width</ipxact:displayName>
+          <ipxact:value>64</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_mcgb_debug_ports_parameters" type="int">
+          <ipxact:name>enable_mcgb_debug_ports_parameters</ipxact:name>
+          <ipxact:displayName>enable_mcgb_debug_ports_parameters</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="enable_pld_mcgb_cal_busy_port" type="int">
+          <ipxact:name>enable_pld_mcgb_cal_busy_port</ipxact:name>
+          <ipxact:displayName>enable_pld_mcgb_cal_busy_port</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="check_output_ports_mcgb" type="int">
+          <ipxact:name>check_output_ports_mcgb</ipxact:name>
+          <ipxact:displayName>check_output_ports_mcgb</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="is_protocol_PCIe" type="int">
+          <ipxact:name>is_protocol_PCIe</ipxact:name>
+          <ipxact:displayName>is_protocol_PCIe</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mapped_output_clock_frequency" type="string">
+          <ipxact:name>mapped_output_clock_frequency</ipxact:name>
+          <ipxact:displayName>mapped_output_clock_frequency</ipxact:displayName>
+          <ipxact:value>5156.25 MHz</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mapped_primary_pll_buffer" type="string">
+          <ipxact:name>mapped_primary_pll_buffer</ipxact:name>
+          <ipxact:displayName>mapped_primary_pll_buffer</ipxact:displayName>
+          <ipxact:value>GX clock output buffer</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="mapped_hip_cal_done_port" type="int">
+          <ipxact:name>mapped_hip_cal_done_port</ipxact:name>
+          <ipxact:displayName>mapped_hip_cal_done_port</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_prot_mode" type="string">
+          <ipxact:name>hssi_pma_cgb_master_prot_mode</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_prot_mode</ipxact:displayName>
+          <ipxact:value>basic_tx</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_silicon_rev" type="string">
+          <ipxact:name>hssi_pma_cgb_master_silicon_rev</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_silicon_rev</ipxact:displayName>
+          <ipxact:value>20nm1</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_x1_div_m_sel" type="string">
+          <ipxact:name>hssi_pma_cgb_master_x1_div_m_sel</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_x1_div_m_sel</ipxact:displayName>
+          <ipxact:value>divbypass</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_cgb_enable_iqtxrxclk" type="string">
+          <ipxact:name>hssi_pma_cgb_master_cgb_enable_iqtxrxclk</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_cgb_enable_iqtxrxclk</ipxact:displayName>
+          <ipxact:value>disable_iqtxrxclk</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_ser_mode" type="string">
+          <ipxact:name>hssi_pma_cgb_master_ser_mode</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_ser_mode</ipxact:displayName>
+          <ipxact:value>sixty_four_bit</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_datarate" type="string">
+          <ipxact:name>hssi_pma_cgb_master_datarate</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_datarate</ipxact:displayName>
+          <ipxact:value>10312500000 bps</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_cgb_power_down" type="string">
+          <ipxact:name>hssi_pma_cgb_master_cgb_power_down</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_cgb_power_down</ipxact:displayName>
+          <ipxact:value>normal_cgb</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_observe_cgb_clocks" type="string">
+          <ipxact:name>hssi_pma_cgb_master_observe_cgb_clocks</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_observe_cgb_clocks</ipxact:displayName>
+          <ipxact:value>observe_nothing</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_op_mode" type="string">
+          <ipxact:name>hssi_pma_cgb_master_op_mode</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_op_mode</ipxact:displayName>
+          <ipxact:value>enabled</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_tx_ucontrol_reset_pcie" type="string">
+          <ipxact:name>hssi_pma_cgb_master_tx_ucontrol_reset_pcie</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_tx_ucontrol_reset_pcie</ipxact:displayName>
+          <ipxact:value>pcscorehip_controls_mcgb</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_vccdreg_output" type="string">
+          <ipxact:name>hssi_pma_cgb_master_vccdreg_output</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_vccdreg_output</ipxact:displayName>
+          <ipxact:value>vccdreg_nominal</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_input_select" type="string">
+          <ipxact:name>hssi_pma_cgb_master_input_select</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_input_select</ipxact:displayName>
+          <ipxact:value>lcpll_top</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hssi_pma_cgb_master_input_select_gen3" type="string">
+          <ipxact:name>hssi_pma_cgb_master_input_select_gen3</ipxact:name>
+          <ipxact:displayName>hssi_pma_cgb_master_input_select_gen3</ipxact:displayName>
+          <ipxact:value>unused</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_parameter_list" type="string">
+          <ipxact:name>gui_parameter_list</ipxact:name>
+          <ipxact:displayName>Parameter Names</ipxact:displayName>
+          <ipxact:value>K counter (valid in fractional mode),L counter (valid in non-cascade mode),M counter,N counter,L cascade predivider/VCO divider(valid in cascade mode) ,L cascade counter (valid in cascade mode),PLL output frequency,vco_freq,datarate</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_parameter_values" type="string">
+          <ipxact:name>gui_parameter_values</ipxact:name>
+          <ipxact:displayName>Parameter Values</ipxact:displayName>
+          <ipxact:value>1,2,64,8,select_vco_output,1,5156.25 MHz,10312.5 MHz,10312.5 Mbps</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+    </altera:altera_module_parameters>
+    <altera:altera_system_parameters>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="device" type="string">
+          <ipxact:name>device</ipxact:name>
+          <ipxact:displayName>Device</ipxact:displayName>
+          <ipxact:value>10CX220YF780E5G</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="deviceFamily" type="string">
+          <ipxact:name>deviceFamily</ipxact:name>
+          <ipxact:displayName>Device family</ipxact:displayName>
+          <ipxact:value>Cyclone 10 GX</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
+          <ipxact:name>deviceSpeedGrade</ipxact:name>
+          <ipxact:displayName>Device Speed Grade</ipxact:displayName>
+          <ipxact:value>5</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="generationId" type="int">
+          <ipxact:name>generationId</ipxact:name>
+          <ipxact:displayName>Generation Id</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="bonusData" type="string">
+          <ipxact:name>bonusData</ipxact:name>
+          <ipxact:displayName>bonusData</ipxact:displayName>
+          <ipxact:value>bonusData 
+{
+   element $system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone 10 GX";
+         type = "String";
+      }
+   }
+   element system_xcvr_atx_pll_c10
+   {
+   }
+}
+</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hideFromIPCatalog" type="bit">
+          <ipxact:name>hideFromIPCatalog</ipxact:name>
+          <ipxact:displayName>Hide from IP Catalog</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="lockedInterfaceDefinition" type="string">
+          <ipxact:name>lockedInterfaceDefinition</ipxact:name>
+          <ipxact:displayName>lockedInterfaceDefinition</ipxact:displayName>
+          <ipxact:value>&lt;boundaryDefinition&gt;
+    &lt;interfaces&gt;
+        &lt;interface&gt;
+            &lt;name&gt;pll_powerdown&lt;/name&gt;
+            &lt;type&gt;conduit&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;pll_powerdown&lt;/name&gt;
+                    &lt;role&gt;pll_powerdown&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
+                        &lt;value&gt;input&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/assignmentValueMap&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedReset&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;prSafe&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;pll_refclk0&lt;/name&gt;
+            &lt;type&gt;clock&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;pll_refclk0&lt;/name&gt;
+                    &lt;role&gt;clk&lt;/role&gt;
+                    &lt;direction&gt;Input&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
+                        &lt;value&gt;input&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/assignmentValueMap&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;clockRate&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;externallyDriven&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ptfSchematicName&lt;/key&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;tx_serial_clk&lt;/name&gt;
+            &lt;type&gt;hssi_serial_clock&lt;/type&gt;
+            &lt;isStart&gt;true&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;tx_serial_clk&lt;/name&gt;
+                    &lt;role&gt;clk&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
+                        &lt;value&gt;output&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/assignmentValueMap&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;clockRate&lt;/key&gt;
+                        &lt;value&gt;0&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;pll_locked&lt;/name&gt;
+            &lt;type&gt;conduit&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;pll_locked&lt;/name&gt;
+                    &lt;role&gt;pll_locked&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
+                        &lt;value&gt;output&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/assignmentValueMap&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedReset&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;prSafe&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+        &lt;interface&gt;
+            &lt;name&gt;pll_cal_busy&lt;/name&gt;
+            &lt;type&gt;conduit&lt;/type&gt;
+            &lt;isStart&gt;false&lt;/isStart&gt;
+            &lt;ports&gt;
+                &lt;port&gt;
+                    &lt;name&gt;pll_cal_busy&lt;/name&gt;
+                    &lt;role&gt;pll_cal_busy&lt;/role&gt;
+                    &lt;direction&gt;Output&lt;/direction&gt;
+                    &lt;width&gt;1&lt;/width&gt;
+                    &lt;lowerBound&gt;0&lt;/lowerBound&gt;
+                    &lt;vhdlType&gt;STD_LOGIC&lt;/vhdlType&gt;
+                    &lt;terminationValue&gt;0&lt;/terminationValue&gt;
+                &lt;/port&gt;
+            &lt;/ports&gt;
+            &lt;assignments&gt;
+                &lt;assignmentValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;ui.blockdiagram.direction&lt;/key&gt;
+                        &lt;value&gt;output&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/assignmentValueMap&gt;
+            &lt;/assignments&gt;
+            &lt;parameters&gt;
+                &lt;parameterValueMap&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedClock&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;associatedReset&lt;/key&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;key&gt;prSafe&lt;/key&gt;
+                        &lt;value&gt;false&lt;/value&gt;
+                    &lt;/entry&gt;
+                &lt;/parameterValueMap&gt;
+            &lt;/parameters&gt;
+        &lt;/interface&gt;
+    &lt;/interfaces&gt;
+&lt;/boundaryDefinition&gt;</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="systemInfos" type="string">
+          <ipxact:name>systemInfos</ipxact:name>
+          <ipxact:displayName>systemInfos</ipxact:displayName>
+          <ipxact:value>&lt;systemInfosDefinition&gt;
+    &lt;connPtSystemInfos/&gt;
+&lt;/systemInfosDefinition&gt;</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+    </altera:altera_system_parameters>
+    <altera:altera_interface_boundary>
+      <altera:interface_mapping altera:name="mcgb_rst" altera:internal="system_xcvr_atx_pll_c10.mcgb_rst"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="mcgb_serial_clk" altera:internal="system_xcvr_atx_pll_c10.mcgb_serial_clk"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="pll_cal_busy" altera:internal="system_xcvr_atx_pll_c10.pll_cal_busy" altera:type="conduit" altera:dir="end">
+        <altera:port_mapping altera:name="pll_cal_busy" altera:internal="pll_cal_busy"></altera:port_mapping>
+      </altera:interface_mapping>
+      <altera:interface_mapping altera:name="pll_locked" altera:internal="system_xcvr_atx_pll_c10.pll_locked" altera:type="conduit" altera:dir="end">
+        <altera:port_mapping altera:name="pll_locked" altera:internal="pll_locked"></altera:port_mapping>
+      </altera:interface_mapping>
+      <altera:interface_mapping altera:name="pll_powerdown" altera:internal="system_xcvr_atx_pll_c10.pll_powerdown" altera:type="conduit" altera:dir="end">
+        <altera:port_mapping altera:name="pll_powerdown" altera:internal="pll_powerdown"></altera:port_mapping>
+      </altera:interface_mapping>
+      <altera:interface_mapping altera:name="pll_refclk0" altera:internal="system_xcvr_atx_pll_c10.pll_refclk0" altera:type="clock" altera:dir="end">
+        <altera:port_mapping altera:name="pll_refclk0" altera:internal="pll_refclk0"></altera:port_mapping>
+      </altera:interface_mapping>
+      <altera:interface_mapping altera:name="reconfig_avmm0" altera:internal="system_xcvr_atx_pll_c10.reconfig_avmm0"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="reconfig_clk0" altera:internal="system_xcvr_atx_pll_c10.reconfig_clk0"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="reconfig_reset0" altera:internal="system_xcvr_atx_pll_c10.reconfig_reset0"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="tx_bonding_clocks" altera:internal="system_xcvr_atx_pll_c10.tx_bonding_clocks"></altera:interface_mapping>
+      <altera:interface_mapping altera:name="tx_serial_clk" altera:internal="system_xcvr_atx_pll_c10.tx_serial_clk" altera:type="hssi_serial_clock" altera:dir="start">
+        <altera:port_mapping altera:name="tx_serial_clk" altera:internal="tx_serial_clk"></altera:port_mapping>
+      </altera:interface_mapping>
+    </altera:altera_interface_boundary>
+    <altera:altera_has_warnings>false</altera:altera_has_warnings>
+    <altera:altera_has_errors>false</altera:altera_has_errors>
+  </ipxact:vendorExtensions>
+</ipxact:component>
