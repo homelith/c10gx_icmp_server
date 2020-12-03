@@ -86,7 +86,7 @@ ACDS_VERSION := 20.1
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := /opt/work/c10gx/c10gx_icmp_server_intl/src/system/system/system.sopcinfo
+SOPCINFO_FILE := /opt/work/c10gx/c10gx_icmp_server/src/system/system/system.sopcinfo
 
 # BMX present. 
 # setting BMX is false

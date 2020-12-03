@@ -1,9 +1,9 @@
 # memory.gdb - GDB memory region definitions
 #
 # Machine generated for CPU 'enet_nios_proc' in SOPC Builder design 'system'
-# SOPC Builder design path: /opt/work/c10gx/c10gx_icmp_server_intl/src/system/system/system.sopcinfo
+# SOPC Builder design path: /opt/work/c10gx/c10gx_icmp_server/src/system/system/system.sopcinfo
 #
-# Generated: Sat Nov 28 08:16:36 JST 2020
+# Generated: Thu Dec 03 01:23:41 JST 2020
 
 # DO NOT MODIFY THIS FILE
 #

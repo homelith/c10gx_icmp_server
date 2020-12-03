@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'enet_nios_proc' in SOPC Builder design 'system'
- * SOPC Builder design path: /opt/work/c10gx/c10gx_icmp_server_intl/src/system/system/system.sopcinfo
+ * SOPC Builder design path: /opt/work/c10gx/c10gx_icmp_server/src/system/system/system.sopcinfo
  *
- * Generated: Sun Nov 29 21:25:38 JST 2020
+ * Generated: Thu Dec 03 01:23:41 JST 2020
  */
 
 /*

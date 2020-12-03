@@ -49,8 +49,8 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name POWER_AUTO_COMPUTE_TJ ON
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name ENABLE_SIGNALTAP ON
-set_global_assignment -name USE_SIGNALTAP_FILE debug.stp
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_global_assignment -name USE_SIGNALTAP_FILE signaltap/icmp_pipeline.stp
 
 ## common signals
 set_location_assignment PIN_AC12 -to fpga_resetn
@@ -282,6 +282,7 @@ set_instance_assignment -name XCVR_C10_TX_PRE_EMP_SIGN_PRE_TAP_2T FIR_PRE_2T_POS
 ## files
 
 set_global_assignment -name FLOW_ENABLE_INTERACTIVE_TIMING_ANALYZER OFF
+set_global_assignment -name SIGNALTAP_FILE signaltap/icmp_pipeline.stp
 set_global_assignment -name SDC_FILE top.sdc
 set_global_assignment -name VERILOG_FILE ../src/top/top.v
 set_global_assignment -name VERILOG_FILE ../src/common/fifo_80x8.v
@@ -317,4 +318,3 @@ set_global_assignment -name IP_FILE ../src/system/ip/system_enet_icmp_proc_param
 set_global_assignment -name IP_FILE ../src/system/ip/system_enet_icmp_proc_ipv4chksum_p0.ip
 set_global_assignment -name IP_FILE ../src/system/ip/system_enet_arp_proc_p0.ip
 set_global_assignment -name QIP_FILE ../src/enet_nios_proc/enet_nios_proc/mem_init/meminit.qip
-set_global_assignment -name SIGNALTAP_FILE debug.stp

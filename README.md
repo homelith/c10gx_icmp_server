@@ -1,13 +1,13 @@
 # c10gx\_icmp\_server
 
 ## Overview
-- Dedicated ping (IPv4 ICMP) reply server design example for a `Intel Cyclone 10 GX FPGA Development Kit`.
+- Dedicated ping (IPv4 ICMP) reply server design example for a ["Intel Cyclone 10 GX FPGA Development Kit"](https://www.intel.com/content/www/us/en/programmable/products/boards_and_kits/dev-kits/altera/cyclone-10-gx-development-kit.html).
 - Pipelined ARP and ICMP responder written in i++ HLS code enables almost 10Gbps capacity and low latency under 1 microseconds.
 - Please change MAC and IP address stored in `src/arp_proc/arp_proc.cpp` before testing on your environment, default value is just for documentation.
 - This software is provided "as-is", with no warranty or guarantee.
 
 ## Licenses
-- Since this software is based on `Cyclone 10 GX PCIe Gen2 x4 DMA Design Example`, codes derived from design example and the other wizard-generated file from Intel tools follow ["License Terms and Conditions for Hardware Reference Designs an/or Design Examples"](https://www.intel.com/content/www/us/en/programmable/common/legal/leg-license_agreement.html) and other Terms of Use conditions.
+- Since this software is based on ["Cyclone 10 GX PCIe Gen2 x4 DMA Design Example"](https://fpgacloud.intel.com/devstore/platform/17.1.2/Pro/cyclone-10-gx-pcie-gen2-x4-dma/), codes derived from design example and the other wizard-generated file from Intel tools follow ["License Terms and Conditions for Hardware Reference Designs an/or Design Examples"](https://www.intel.com/content/www/us/en/programmable/common/legal/leg-license_agreement.html) and other Terms of Use conditions.
 - Newly written codes are licensed under MIT license, see header of indivisual files.
 
 ## Tested on
@@ -20,7 +20,7 @@
   + Ubuntu 18.04.5 LTS (officially not suppoted OS of Quartus tools)
   + Intel Quartus Prime Pro Edition for Linux, Version 20.1
   + Intel HLS Compiler Pro Edition for Linux
-  + The Nios II SBT for Eclipse for Linux
+  + The Nios II SBT for Eclipse on Linux environment
 
 ![Experimental Setup](doc/img/exp_setup.jpg)
 
@@ -44,4 +44,10 @@
 
 - ping test
   + Set suitable IP address on 10G NIC of the host PC.
-  + `$ ping {c10gx devkit IP}` and see the outputs.
+  + `$ ping {IP specified in src/arp_proc/arp_proc.cpp}` and see the outputs.
+
+## note
+
+- TARGET\_FREQ value of HLS compiling Makefile (e.g. src/icmp\_proc/Makefile) is currently set to 50MHz, much slower than its drive clock 156.25MHz.
+  + TARGET\_FREQ=150MHz setting generates II=3 codes limits pipeline speed to 3.3Gbps while TARGET\_FREQ=50MHz generated codes are successfully prace & routed in 156.25MHz.
+  + Target frequency estimator for cyclone 10 GX may not be well sophisticated yet ?

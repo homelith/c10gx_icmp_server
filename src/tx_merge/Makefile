@@ -30,7 +30,7 @@
 .PHONY: default single modgen sysgen softgen csim vsim
 
 TARGET          := tx_merge
-TARGET_FREQ     := 160MHz
+TARGET_FREQ     := 50MHz
 SOURCE_FILES    := tx_merge.cpp
 FPGA_PART       := 10CX220YF780E5G
 CXX             := i++

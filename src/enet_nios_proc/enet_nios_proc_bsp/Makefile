@@ -99,7 +99,7 @@ ACDS_VERSION := 20.1
 # BUILD_NUMBER: 177
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := /opt/work/c10gx/c10gx_icmp_server_intl/src/system/system/system.sopcinfo
+SOPC_FILE := /opt/work/c10gx/c10gx_icmp_server/src/system/system/system.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

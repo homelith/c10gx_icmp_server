@@ -30,7 +30,7 @@
 .PHONY: default single modgen sysgen softgen csim vsim
 
 TARGET          := rx_split
-TARGET_FREQ     := 160MHz
+TARGET_FREQ     := 50MHz
 SOURCE_FILES    := rx_split.cpp
 FPGA_PART       := 10CX220YF780E5G
 CXX             := i++

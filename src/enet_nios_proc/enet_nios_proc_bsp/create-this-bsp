@@ -4,8 +4,8 @@
 
 BSP_TYPE=hal
 BSP_DIR=.
-SOPC_DIR=/opt/work/c10gx/c10gx_icmp_server_intl/src/system/system/
-SOPC_FILE=/opt/work/c10gx/c10gx_icmp_server_intl/src/system/system/system.sopcinfo
+SOPC_DIR=/opt/work/c10gx/c10gx_icmp_server/src/system/system/
+SOPC_FILE=/opt/work/c10gx/c10gx_icmp_server/src/system/system/system.sopcinfo
 NIOS2_BSP_ARGS=""
 CPU_NAME=
 

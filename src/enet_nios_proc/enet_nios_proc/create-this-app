@@ -3,8 +3,8 @@
 # This script creates the hello_world application in this directory.
 
 
-BSP_DIR=/opt/work/c10gx/c10gx_icmp_server_intl/src/enet_nios_proc/enet_nios_proc_bsp/
-QUARTUS_PROJECT_DIR=/opt/work/c10gx/c10gx_icmp_server_intl/syn/
+BSP_DIR=/opt/work/c10gx/c10gx_icmp_server/src/enet_nios_proc/enet_nios_proc_bsp/
+QUARTUS_PROJECT_DIR=/opt/work/c10gx/c10gx_icmp_server/syn/
 NIOS2_APP_GEN_ARGS="--elf-name enet_nios_proc.elf --set OBJDUMP_INCLUDE_SOURCE 1 --src-files hello_world.c"
 
 # If script is launched from Windows through Windows Subsystem for Linux (WSL).  

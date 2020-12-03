@@ -2,11 +2,11 @@
 <ns2:Settings xmlns:ns2="http://www.altera.com/embeddedsw/bsp/schema">
     <BspType>hal</BspType>
     <BspVersion>default</BspVersion>
-    <BspGeneratedTimeStamp>2020/12/02 16:03:16</BspGeneratedTimeStamp>
-    <BspGeneratedUnixTimeStamp>1606892596619</BspGeneratedUnixTimeStamp>
+    <BspGeneratedTimeStamp>2020/12/03 14:33:52</BspGeneratedTimeStamp>
+    <BspGeneratedUnixTimeStamp>1606973632241</BspGeneratedUnixTimeStamp>
     <BspGeneratedLocation>./</BspGeneratedLocation>
     <BspSettingsFile>enet_nios_proc_bsp/settings.bsp</BspSettingsFile>
-    <SopcDesignFile>/opt/work/c10gx/c10gx_icmp_server_intl/src/system/system/system.sopcinfo</SopcDesignFile>
+    <SopcDesignFile>/opt/work/c10gx/c10gx_icmp_server/src/system/system/system.sopcinfo</SopcDesignFile>
     <JdiFile>default</JdiFile>
     <Cpu>enet_nios_proc</Cpu>
     <Setting>

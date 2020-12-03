@@ -122,7 +122,7 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := /opt/work/c10gx/c10gx_icmp_server_intl/src/enet_nios_proc/enet_nios_proc_bsp/
+BSP_ROOT_DIR := /opt/work/c10gx/c10gx_icmp_server/src/enet_nios_proc/enet_nios_proc_bsp/
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=
@@ -133,7 +133,7 @@ APP_LIBRARY_NAMES :=
 BUILD_PRE_PROCESS :=
 BUILD_POST_PROCESS :=
 
-QUARTUS_PROJECT_DIR := /opt/work/c10gx/c10gx_icmp_server_intl/syn/
+QUARTUS_PROJECT_DIR := /opt/work/c10gx/c10gx_icmp_server/syn/
 
 
 #END GENERATED
