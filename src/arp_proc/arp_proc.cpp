@@ -49,11 +49,11 @@
 #define OWN_MAC_4   0x00
 #define OWN_MAC_5   0x00
 #define OWN_IP_0     192
-#define OWN_IP_1       0
+#define OWN_IP_1     168
 #define OWN_IP_2       2
 #define OWN_IP_3     100
 #define GTW_IP_0     192
-#define GTW_IP_1       0
+#define GTW_IP_1     168
 #define GTW_IP_2       2
 #define GTW_IP_3       1
 
